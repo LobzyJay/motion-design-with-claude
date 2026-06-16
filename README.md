@@ -2,13 +2,15 @@
 
 Claude Code skills for motion designers working in Blender and After Effects.
 
-**Install time: under 15 minutes.** After that, Claude Code knows motion design principles, After Effects scripting patterns, and Blender's bpy API, without you re-explaining any of it.
+Think of it as handing Claude the years of taste and tool knowledge you'd otherwise have to re-explain every single session. You set it up once, and from then on Claude already knows the difference between ease-in and ease-out, why everything animating at once looks cheap, and how to actually drive your tools.
+
+**Install time: under 15 minutes.** Grab a coffee, you probably won't finish it before you're done.
 
 ---
 
 ## What it is
 
-Four skills that give Claude the taste and tool knowledge to work alongside a senior motion designer:
+Four skills that turn Claude into a collaborator who already gets it. Here's the crew:
 
 - **`motion-design`**: foundation. 12 principles, easing taxonomy, timing and spacing, composition for motion, defaults to steer away from. Tool-agnostic. Loads when motion is the subject.
 - **`aftereffects-motion`**: AE specialist. Two-mode workflow (live MCP vs JSX scripts), ExtendScript patterns, expressions, effects catalog. Loads when AE is named or implied.
@@ -19,7 +21,7 @@ Two MCP servers wire Claude directly into your tools:
 - **After Effects MCP** (`TheLlamainator/after-effects-mcp`): live commands into AE and a JSX bridge.
 - **Blender MCP** (official Blender Lab MCP, `projects.blender.org/lab/blender_mcp`): Python commands into a running Blender session.
 
-The skills work without the MCPs. If you only want writing-level help (planning, reviewing timing, critiquing a script), skip the MCP setup.
+Good news: the skills work just fine without the MCPs. If all you want is a sharp second brain for planning, reviewing timing, or critiquing a script, skip the MCP setup entirely and jump to Step 4.
 
 ---
 
@@ -31,7 +33,7 @@ The skills work without the MCPs. If you only want writing-level help (planning,
 - Node.js 18+ and npm (only for the After Effects MCP in Step 2). Check with `node -v`.
 - After Effects and/or Blender, if you want live tool control.
 
-Steps 1 and 4 are required. Steps 2 and 3 are optional: do Step 2 only if you use After Effects, Step 3 only if you use Blender. The skills give writing-level help without either.
+Steps 1 and 4 are the must-dos. Steps 2 and 3 are pick-your-own-adventure: do Step 2 if you live in After Effects, Step 3 if Blender's your home, both if you bounce between them. Skip both and the skills still give you solid writing-level help.
 
 ### Step 1: Clone this repo
 
@@ -125,19 +127,23 @@ See `.mcp.json.example` for the full config. Copy it to `.mcp.json` and adjust p
 
 ## Who it's for
 
-Senior motion designers who want Claude as a working collaborator, not a tutorial bot. You know what anticipation and follow-through are. You know the difference between ease-in and ease-out. You want Claude to know that too, without you explaining it every session.
+Working motion designers who want a collaborator, not a tutorial bot that explains what a keyframe is for the hundredth time. You already know anticipation and follow-through. You already know ease-in from ease-out. You just want Claude to know it too, so you can skip the small talk and get to the good part. If that's you, you're home.
 
 ---
 
 ## What's out of scope
 
-- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not covered.
-- Web-motion (GSAP, Framer Motion, R3F). Use [claudedesignskills](https://github.com/freshtechbro/claudedesignskills) for those.
-- Cowork plugin packaging. This is Claude Code only.
+Setting expectations so nobody's surprised:
+
+- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not covered, sorry.
+- Web-motion (GSAP, Framer Motion, R3F). Wrong toolbox. Go grab [claudedesignskills](https://github.com/freshtechbro/claudedesignskills) instead.
+- Cowork plugin packaging. This is Claude Code, pure and simple.
 
 ---
 
 ## Troubleshooting
+
+Something acting up? Don't panic, it's almost always one of these.
 
 **AE MCP not responding:**
 - Close and reopen `Window > mcp-bridge-auto.jsx` in AE.
@@ -167,4 +173,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new tool skills (e.g. `cinema4d-motion`).
+Want to add your own tool skill (a `cinema4d-motion`, maybe)? Awesome, we'd love that. [CONTRIBUTING.md](CONTRIBUTING.md) walks you through it.
