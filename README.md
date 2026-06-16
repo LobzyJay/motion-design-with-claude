@@ -25,14 +25,26 @@ The skills work without the MCPs. If you only want writing-level help (planning,
 
 ## Install: 15-minute path
 
+**Before you start, you need:**
+- [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (the `claude` command works in your terminal).
+- Git.
+- Node.js 18+ and npm (only for the After Effects MCP in Step 2). Check with `node -v`.
+- After Effects and/or Blender, if you want live tool control.
+
+Steps 1 and 4 are required. Steps 2 and 3 are optional: do Step 2 only if you use After Effects, Step 3 only if you use Blender. The skills give writing-level help without either.
+
 ### Step 1: Clone this repo
+
+Get the skills onto your machine. Stay in this folder for the commands that follow.
 
 ```bash
 git clone https://github.com/LobzyJay/motion-design-with-claude.git
 cd motion-design-with-claude
 ```
 
-### Step 2: Install After Effects MCP
+### Step 2 (optional, After Effects users): Install the After Effects MCP
+
+This lets Claude send live commands into a running AE. Run these from inside the `motion-design-with-claude` folder from Step 1.
 
 ```bash
 git clone https://github.com/TheLlamainator/after-effects-mcp.git
@@ -50,7 +62,9 @@ claude mcp add AfterEffectsMCP node "$(pwd)/after-effects-mcp/build/index.js"
 
 Verify: `claude mcp list` should show `AfterEffectsMCP`.
 
-### Step 3: Install Blender MCP
+### Step 3 (optional, Blender users): Install the Blender MCP
+
+This lets Claude send Python commands into a running Blender session.
 
 1. Download the Blender Lab MCP add-on from `projects.blender.org/lab/blender_mcp`.
 2. In Blender: Edit > Preferences > Add-ons > Install > select the downloaded file > Enable.
@@ -65,7 +79,7 @@ Verify: `claude mcp list` should show `BlenderMCP`.
 
 ### Step 4: Install the skills
 
-Claude Code discovers skills from `~/.claude/skills/` (personal, available in every project) and `.claude/skills/` (project-local). Copy the skills into one of those.
+This is the step that actually installs the skills. Claude Code discovers them from `~/.claude/skills/` (personal, available in every project) and `.claude/skills/` (project-local). Pick one and copy the skills into it.
 
 Personal install (available everywhere):
 ```bash
@@ -84,13 +98,15 @@ There is no `skillsPath` setting; the two directories above are the only places 
 
 ### Step 5: Sanity checks
 
-**AE sanity check:**
+Run the foundation check below (works for everyone). Run the AE check only if you did Step 2, and the Blender check only if you did Step 3.
+
+**AE sanity check (if you did Step 2):**
 1. Open AE with a project.
 2. Window > `mcp-bridge-auto.jsx` > tick "Auto-run commands".
 3. In Claude Code: `"Use the aftereffects-motion skill. List the compositions in my current AE project."`
 4. Expected: Claude returns a list of comp names.
 
-**Blender sanity check:**
+**Blender sanity check (if you did Step 3):**
 1. Open Blender with the MCP server running.
 2. In Claude Code: `"Use the blender-motion skill. Connect to Blender MCP and tell me what objects are in my current scene."`
 3. Expected: Claude returns the object list.
