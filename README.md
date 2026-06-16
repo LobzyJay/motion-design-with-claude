@@ -115,9 +115,9 @@ Senior motion designers who want Claude as a working collaborator, not a tutoria
 
 ## What's out of scope
 
-- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not in v1.
+- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not covered.
 - Web-motion (GSAP, Framer Motion, R3F). Use [claudedesignskills](https://github.com/freshtechbro/claudedesignskills) for those.
-- Cowork plugin packaging. v1 is Claude Code only.
+- Cowork plugin packaging. This is Claude Code only.
 
 ---
 
@@ -151,4 +151,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new tool skills (e.g. a future `cinema4d-motion`).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new tool skills (e.g. `cinema4d-motion`).
