@@ -1,4 +1,4 @@
-<!-- INCOMPLETE: expand iteratively — add new effects as they come up in real sessions -->
+<!-- INCOMPLETE: expand iteratively, add new effects as they come up in real sessions -->
 
 # Effects Catalog
 
@@ -145,7 +145,7 @@ ExtendScript: `"ADBE Glo2"`
 
 ## Trim Paths
 
-Not an effect — a shape layer property. MCP cannot access this. JSX only.
+Not an effect, a shape layer property. MCP cannot access this. JSX only.
 
 ```js
 // accessing Trim Paths on a shape layer

@@ -47,7 +47,7 @@ When reviewing motion:
 2. Name what reads as a default. Be direct.
 3. Propose a specific alternative with values, not vague direction.
 
-"The easing feels off" is not useful. "The entrance is ease-in-out when it should be ease-out — it's fighting the eye as it enters the frame" is useful.
+"The easing feels off" is not useful. "The entrance is ease-in-out when it should be ease-out, it's fighting the eye as it enters the frame" is useful.
 
 ## Voice
 

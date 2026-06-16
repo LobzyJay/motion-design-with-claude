@@ -65,7 +65,7 @@ Lazy-load. Don't load everything up front.
 
 1. User describes goal or drops a reference image.
 2. Read the scene (objects, materials, camera, lights).
-3. Ask one blocking question, if any. Don't ask about creative taste — make a call and let the user push back.
+3. Ask one blocking question, if any. Don't ask about creative taste, make a call and let the user push back.
 4. Execute changes.
 5. Trigger EEVEE preview render. Show the user the result.
 6. User responds with what's wrong. Translate into specific bpy changes.

@@ -28,13 +28,13 @@ obj.keyframe_insert(data_path="location", frame=30)
 
 | What you want to keyframe | data_path | index |
 |---|---|---|
-| Location (all axes) | `"location"` | — |
+| Location (all axes) | `"location"` | n/a |
 | Location X only | `"location"` | `0` |
 | Location Y only | `"location"` | `1` |
 | Location Z only | `"location"` | `2` |
-| Rotation (Euler) | `"rotation_euler"` | — |
-| Scale | `"scale"` | — |
-| Visibility (hide_render) | `"hide_render"` | — |
+| Rotation (Euler) | `"rotation_euler"` | n/a |
+| Scale | `"scale"` | n/a |
+| Visibility (hide_render) | `"hide_render"` | n/a |
 | Material slot 0 roughness | on the material node, not the object | see below |
 
 For properties on materials/nodes, access the node tree directly:
@@ -63,16 +63,16 @@ for fcurve in action.fcurves:
 ```
 
 Interpolation types:
-- `'BEZIER'` — smooth curves, handles manually adjustable
-- `'LINEAR'` — straight lines between keyframes
-- `'CONSTANT'` — hold value until next keyframe (snap)
-- `'EASE'` — built-in easing (uses the `easing` property below)
-- `'BOUNCE'`, `'ELASTIC'`, `'BACK'` — procedural easing presets
+- `'BEZIER'`: smooth curves, handles manually adjustable
+- `'LINEAR'`: straight lines between keyframes
+- `'CONSTANT'`: hold value until next keyframe (snap)
+- `'EASE'`: built-in easing (uses the `easing` property below)
+- `'BOUNCE'`, `'ELASTIC'`, `'BACK'`: procedural easing presets
 
 Easing modifier (only applies when `interpolation = 'EASE'`):
-- `'EASE_IN'` — accelerates (slow start)
-- `'EASE_OUT'` — decelerates (slow end)
-- `'EASE_IN_OUT'` — both ends slow
+- `'EASE_IN'`: accelerates (slow start)
+- `'EASE_OUT'`: decelerates (slow end)
+- `'EASE_IN_OUT'`: both ends slow
 
 For most motion graphics: use `'BEZIER'` and control handles manually, or use `'EASE'` with the appropriate easing type for quick setup.
 

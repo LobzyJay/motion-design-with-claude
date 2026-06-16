@@ -158,10 +158,10 @@ wiggle(5, 20)   // 5 cycles/sec, 20px amplitude. It's just noise.
 
 Wiggle with intent:
 ```js
-// slow, large drift — ambient camera-like movement
+// slow, large drift, ambient camera-like movement
 wiggle(0.5, 8)
 
-// fast, small — mechanical jitter
+// fast, small, mechanical jitter
 wiggle(24, 2)
 
 // time-limited wiggle (only during a window, settles after)

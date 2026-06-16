@@ -18,7 +18,7 @@ Both have to be right.
 
 ## Duration as a design variable
 
-Duration encodes weight. This is not a metaphor — it is how viewers read physicality in motion.
+Duration encodes weight. This is not a metaphor, it is how viewers read physicality in motion.
 
 | Duration | What it reads as |
 |---|---|
@@ -56,7 +56,7 @@ Stagger direction matters. Top-to-bottom or left-to-right stagger reinforces rea
 
 Offset is stagger applied to follow-through: when parts of a multi-element object settle at different times.
 
-In a text lockup: the primary word settles, then the secondary line settles 80ms later, then a supporting badge settles 80ms after that. No single element defines the endpoint — the stack lands in sequence.
+In a text lockup: the primary word settles, then the secondary line settles 80ms later, then a supporting badge settles 80ms after that. No single element defines the endpoint, the stack lands in sequence.
 
 Offset is not the same as delay. Delay postpones a move entirely. Offset lets the whole group start moving together but arrive at different times.
 

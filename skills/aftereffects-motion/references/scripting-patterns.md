@@ -149,7 +149,7 @@ Internal names differ from display names. See `references/effects-catalog.md` fo
 Run this when the comp state has diverged from what you know. Save the output, read it back via MCP.
 
 ```js
-// _dump_state.jsx — run this to capture current comp state
+// _dump_state.jsx, run this to capture current comp state
 var comp = app.project.activeItem;
 if (!comp || !(comp instanceof CompItem)) {
     alert("No active comp.");
@@ -237,10 +237,10 @@ try {
 ## Naming conventions
 
 Scripts you write should follow this pattern:
-- `structural_build.jsx` — creates the full animation structure
-- `lockup_reveal_v2.jsx` — versioned variant
-- `colorize_dark.jsx` — variant by purpose
-- `_dump_state.jsx` — leading underscore for utility/diagnostic scripts
-- `_cleanup.jsx` — cleanup utility
+- `structural_build.jsx`, creates the full animation structure
+- `lockup_reveal_v2.jsx`, versioned variant
+- `colorize_dark.jsx`, variant by purpose
+- `_dump_state.jsx`, leading underscore for utility/diagnostic scripts
+- `_cleanup.jsx`, cleanup utility
 
 Never name scripts by date ("script_may26.jsx"). Name by what they do.

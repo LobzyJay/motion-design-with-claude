@@ -1,12 +1,14 @@
 # Contributing
 
-How to add a new tool skill or extend an existing one.
+Want to add a new tool skill or beef up an existing one? Brilliant. Here's everything you need to do it well.
 
 ---
 
 ## Before you write anything
 
-Read [STYLE.md](STYLE.md) top to bottom. The voice rules are non-negotiable. Content that violates them will not be merged.
+Read [STYLE.md](STYLE.md) top to bottom. Yes, all of it. The voice rules are non-negotiable, and content that breaks them won't get merged, so save yourself the round-trip and soak them in first.
+
+Then read the existing `aftereffects-motion/SKILL.md` and `aftereffects-motion/references/operational-canon.md`. These are your length and density templates. Match them and you're already most of the way there.
 
 Read the existing `aftereffects-motion/SKILL.md` and `aftereffects-motion/references/operational-canon.md`. These are the length and density templates. Match them.
 
@@ -61,7 +63,7 @@ Pair with motion-design (foundation skill) for principles, timing, and taste.
 
 ### 7. Quality bar
 
-Before submitting:
+Quick gut-check before you submit. Run through this and you're golden:
 
 1. A senior designer reading the skill does not roll their eyes.
 2. The voice rules in STYLE.md are met (no em dashes, no AI phrasing, no corporate language).
@@ -75,9 +77,9 @@ Before submitting:
 
 ## Extending an existing reference
 
-If a reference has `<!-- TODO: expand ... -->`, that's an open invitation. Fill in the missing section, match the existing voice and format, and remove the TODO comment when done.
+See a `<!-- TODO: expand ... -->` in a reference? Consider it an open invitation. Fill in the missing section, match the existing voice and format, and delete the TODO comment when you're done.
 
-For the stub references (shape-layers, text-animators, animation-and-keyframes, render-output in aftereffects-motion), the pattern is: add concrete code examples, parameter tables, and common patterns. Model the density and format on `scripting-patterns.md` in the same skill.
+The pattern for any thin reference: add concrete code examples, parameter tables, and the patterns people actually reach for. Model the density and format on `scripting-patterns.md`, `text-animators.md`, or `shape-layers.md` in aftereffects-motion. Those are the bar.
 
 ---
 

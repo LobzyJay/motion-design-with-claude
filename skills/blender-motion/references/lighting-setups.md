@@ -107,7 +107,7 @@ add_area_light(
     location=(2.0, -1.0, 4.0),
     rotation_euler=(math.radians(55), 0, math.radians(-45))
 )
-# no fill — shadows read as dramatic
+# no fill, shadows read as dramatic
 ```
 
 For even harder shadows: switch from Area to Sun light (parallel rays, infinitely hard). Set `energy` in lux (start at 5–10 lux for Sun).
