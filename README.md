@@ -2,7 +2,7 @@
 
 Claude Code skills for motion designers working in Blender and After Effects.
 
-**Install time: under 15 minutes.** After that, Claude Code knows motion design principles, After Effects scripting patterns, and Blender's bpy API — without you re-explaining any of it.
+**Install time: under 15 minutes.** After that, Claude Code knows motion design principles, After Effects scripting patterns, and Blender's bpy API, without you re-explaining any of it.
 
 ---
 
@@ -10,14 +10,14 @@ Claude Code skills for motion designers working in Blender and After Effects.
 
 Four skills that give Claude the taste and tool knowledge to work alongside a senior motion designer:
 
-- **`motion-design`** — foundation. 12 principles, easing taxonomy, timing and spacing, composition for motion, defaults to steer away from. Tool-agnostic. Loads when motion is the subject.
-- **`aftereffects-motion`** — AE specialist. Two-mode workflow (live MCP vs JSX scripts), ExtendScript patterns, expressions, effects catalog. Loads when AE is named or implied.
-- **`blender-motion`** — Blender specialist. bpy keyframing, materials, lighting, cameras, F-curve modifiers, drivers, geometry nodes, render setup. Loads when Blender is named or implied.
-- **`motion-design-critique`** — QA and diagnostics. Loads when something looks wrong, a script throws an error, or a render isn't what it should be.
+- **`motion-design`**: foundation. 12 principles, easing taxonomy, timing and spacing, composition for motion, defaults to steer away from. Tool-agnostic. Loads when motion is the subject.
+- **`aftereffects-motion`**: AE specialist. Two-mode workflow (live MCP vs JSX scripts), ExtendScript patterns, expressions, effects catalog. Loads when AE is named or implied.
+- **`blender-motion`**: Blender specialist. bpy keyframing, materials, lighting, cameras, F-curve modifiers, drivers, geometry nodes, render setup. Loads when Blender is named or implied.
+- **`motion-design-critique`**: QA and diagnostics. Loads when something looks wrong, a script throws an error, or a render isn't what it should be.
 
 Two MCP servers wire Claude directly into your tools:
-- **After Effects MCP** (`TheLlamainator/after-effects-mcp`) — live commands into AE and a JSX bridge.
-- **Blender MCP** (official Blender Lab MCP, `projects.blender.org/lab/blender_mcp`) — Python commands into a running Blender session.
+- **After Effects MCP** (`TheLlamainator/after-effects-mcp`): live commands into AE and a JSX bridge.
+- **Blender MCP** (official Blender Lab MCP, `projects.blender.org/lab/blender_mcp`): Python commands into a running Blender session.
 
 The skills work without the MCPs. If you only want writing-level help (planning, reviewing timing, critiquing a script), skip the MCP setup.
 
@@ -25,14 +25,14 @@ The skills work without the MCPs. If you only want writing-level help (planning,
 
 ## Install: 15-minute path
 
-### Step 1 — Clone this repo
+### Step 1: Clone this repo
 
 ```bash
 git clone https://github.com/LobzyJay/motion-design-with-claude.git
 cd motion-design-with-claude
 ```
 
-### Step 2 — Install After Effects MCP
+### Step 2: Install After Effects MCP
 
 ```bash
 git clone https://github.com/TheLlamainator/after-effects-mcp.git
@@ -50,7 +50,7 @@ claude mcp add AfterEffectsMCP node "$(pwd)/after-effects-mcp/build/index.js"
 
 Verify: `claude mcp list` should show `AfterEffectsMCP`.
 
-### Step 3 — Install Blender MCP
+### Step 3: Install Blender MCP
 
 1. Download the Blender Lab MCP add-on from `projects.blender.org/lab/blender_mcp`.
 2. In Blender: Edit > Preferences > Add-ons > Install > select the downloaded file > Enable.
@@ -63,24 +63,26 @@ claude mcp add BlenderMCP sse http://localhost:9876/sse
 
 Verify: `claude mcp list` should show `BlenderMCP`.
 
-### Step 4 — Install the skills
+### Step 4: Install the skills
 
-Copy or symlink the skills directory into your Claude Code skills path:
+Claude Code discovers skills from `~/.claude/skills/` (personal, available in every project) and `.claude/skills/` (project-local). Copy the skills into one of those.
 
+Personal install (available everywhere):
 ```bash
 # macOS/Linux
 mkdir -p ~/.claude/skills
 cp -r skills/* ~/.claude/skills/
 ```
 
-Or add to your project's `.claude/settings.json`:
-```json
-{
-  "skillsPath": "/path/to/motion-design-with-claude/skills"
-}
+Or project-local, so the skills travel with one repo:
+```bash
+mkdir -p /path/to/your-project/.claude/skills
+cp -r skills/* /path/to/your-project/.claude/skills/
 ```
 
-### Step 5 — Sanity checks
+There is no `skillsPath` setting; the two directories above are the only places Claude Code looks.
+
+### Step 5: Sanity checks
 
 **AE sanity check:**
 1. Open AE with a project.

@@ -41,6 +41,7 @@ Heuristic: if the task is more than 5 MCP calls, write a JSX. Don't ask. See `re
 | Before scoping what's possible | `references/limits-and-pitfalls.md` |
 | Reaching for `wiggle`, `loopOut`, `valueAtTime`, time-driven motion, inertial bounce | `references/expressions.md` |
 | Before writing any JSX | `references/scripting-patterns.md` |
+| Setting keyframes, interpolation, velocity, or time remap by hand | `references/animation-and-keyframes.md` |
 | Applying or keyframing an effect | `references/effects-catalog.md` |
 | Working with shape layers / Trim Paths | `references/shape-layers.md` |
 | Animating text reveals or titles | `references/text-animators.md` |

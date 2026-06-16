@@ -72,6 +72,6 @@ One request. Be specific about what you need and why.
 | "Looks like a slideshow" | No stagger, everything moves at once, no follow-through |
 | "Feels flat" | No depth cues: no stagger, no size differentiation, no motion path arcs |
 | "Doesn't feel premium" | Default easing, missing anticipation, or wiggle without purpose |
-| "The bounce looks fake" | Symmetric bounce — needs decay per cycle |
+| "The bounce looks fake" | Symmetric bounce, needs decay per cycle |
 | "Letters look the same" | Stagger too large or too small, or same easing on every character |
-| "The settle looks off" | Overshoot too large, or decay too slow — adjust amplitude and decay rate |
+| "The settle looks off" | Overshoot too large, or decay too slow, adjust amplitude and decay rate |

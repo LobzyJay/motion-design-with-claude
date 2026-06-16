@@ -57,7 +57,7 @@ If a reference exceeds 600 lines, split it into two focused files.
 
 **Code blocks for all code.** Every script, bpy snippet, expression, or shell command goes in a fenced code block with the language tag.
 
-**Tables for mappings.** UI name vs ExtendScript name, situation vs reference, user phrase vs Claude action — all tables.
+**Tables for mappings.** UI name vs ExtendScript name, situation vs reference, user phrase vs Claude action: all tables.
 
 **No nested headers past `###`.** Three levels is enough. If you need a fourth level, the content needs restructuring.
 

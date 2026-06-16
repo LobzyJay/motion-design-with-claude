@@ -127,11 +127,11 @@ The user will describe what they see, not what settings to change. Your job is t
 
 | User says | Blender translation |
 |---|---|
-| "Looks too shiny / like a mirror" | Roughness too low — raise toward 0.2–0.5 |
-| "Looks too plastic / fake" | Roughness near 0, no subsurface — raise Roughness to 0.07–0.15, add slight Subsurface |
-| "Shadows too sharp and hard" | Light source too small or too far — increase Area Light size, or move it closer |
-| "Too dark, can't see detail" | Lights underpowered or background too dark — raise light Energy or add fill light |
-| "Flat, no depth" | Missing fill/rim light, or no ambient occlusion — add a secondary light or enable HDRI |
-| "Wrong colour" | Material Base Color, or light Color Temperature — adjust accordingly |
-| "Gradient across the face" | Large area light close to the object — increase light size to 600x600mm+ and position it 45 degrees above |
-| "Frosted / soft / premium" | Roughness 0.05–0.1 + Transmission 0.0 + Volume Absorption for depth — see materials-and-shading.md |
+| "Looks too shiny / like a mirror" | Roughness too low, raise toward 0.2–0.5 |
+| "Looks too plastic / fake" | Roughness near 0, no subsurface, raise Roughness to 0.07–0.15, add slight Subsurface |
+| "Shadows too sharp and hard" | Light source too small or too far, increase Area Light size, or move it closer |
+| "Too dark, can't see detail" | Lights underpowered or background too dark, raise light Energy or add fill light |
+| "Flat, no depth" | Missing fill/rim light, or no ambient occlusion, add a secondary light or enable HDRI |
+| "Wrong colour" | Material Base Color, or light Color Temperature, adjust accordingly |
+| "Gradient across the face" | Large area light close to the object, increase light size to 600x600mm+ and position it 45 degrees above |
+| "Frosted / soft / premium" | Roughness 0.05–0.1 + Transmission 0.0 + Volume Absorption for depth, see materials-and-shading.md |
