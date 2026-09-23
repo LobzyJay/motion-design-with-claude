@@ -1,4 +1,4 @@
-# motion-design-with-claude
+# motion-design-with-claude-&-Gpt
 
 Agent skills for motion designers working in Blender and After Effects. Built for Claude Code, and they run the same way under GPT-6 Astra in Codex.
 
