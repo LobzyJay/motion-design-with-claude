@@ -1,0 +1,5 @@
+[     813ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://www.secondeight.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1:1
+[    1002ms] Uncaught TypeError: Cannot read properties of null (reading 'appendChild')
+    at <anonymous> (https://cdn.commoninja.com/sdk/latest/commonninja.js?ver=7.0:0:26627)
+[    1244ms] The play() request was interrupted by a new load request. https://goo.gl/LdLk22
+[    1244ms] The play() request was interrupted by a new load request. https://goo.gl/LdLk22

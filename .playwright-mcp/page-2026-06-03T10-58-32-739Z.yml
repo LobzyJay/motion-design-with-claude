@@ -1,0 +1,218 @@
+- generic [active]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo Sam Hox - secondEight" [ref=e7]:
+          - /url: https://www.secondeight.net
+          - img "logo" [ref=e8]
+          - text: Sam Hox - secondEight
+        - navigation [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link "Work" [ref=e12]:
+                - /url: https://www.secondeight.net/
+            - listitem [ref=e13]:
+              - link "About" [ref=e14]:
+                - /url: https://www.secondeight.net/about
+            - listitem [ref=e15]:
+              - link "Shop" [ref=e16]:
+                - /url: https://samhox.gumroad.com/
+            - listitem [ref=e17]:
+              - link "Let’s Talk" [ref=e18]:
+                - /url: https://www.secondeight.net/contact
+                - generic [ref=e19]: Let’s Talk
+    - generic [ref=e21]:
+      - generic [ref=e24]:
+        - heading "Gray Matter Brand Design" [level=2] [ref=e29]:
+          - text: Gray Matter
+          - text: Brand Design
+        - generic [ref=e33]:
+          - paragraph [ref=e34]
+          - paragraph [ref=e35]:
+            - text: "Client: Gray Matter"
+            - text: "Year: 2025 - 2026"
+            - text: "Role: Logo,Naming, Graphics, Animation, 3D, UI/UX Design"
+      - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e43]
+      - generic [ref=e45]:
+        - generic [ref=e48]:
+          - heading "How I Built Grey Matter, A Procedural Data System in Blender" [level=1] [ref=e51]: How I Built Grey Matter, A Procedural Data System in Blender
+          - paragraph [ref=e54]:
+            - text: "This brand began with one goal: to make data come to life."
+            - text: Built entirely in Blender through geometry nodes, Grey Matter explores how motion, structure, and design merge into a living system of data lines and shapes.
+        - generic [ref=e55]:
+          - generic [ref=e57]:
+            - paragraph [ref=e60]: PART 01
+            - application "Video Player" [ref=e63]:
+              - generic:
+                - button "Play" [ref=e69]
+                - generic [ref=e70]:
+                  - button "Play" [ref=e72]
+                  - timer [ref=e73]: 00:00
+                  - slider "Time Slider" [ref=e75]
+                  - generic [ref=e77]: 00:00
+                  - button "Mute" [ref=e79]
+                  - button "Fullscreen" [ref=e81]
+          - generic [ref=e83]:
+            - paragraph [ref=e86]: PART 02
+            - application "Video Player" [ref=e89]:
+              - generic:
+                - button "Play" [ref=e95]
+                - generic [ref=e96]:
+                  - button "Play" [ref=e98]
+                  - timer [ref=e99]: 00:00
+                  - slider "Time Slider" [ref=e101]
+                  - generic [ref=e103]: 00:00
+                  - button "Mute" [ref=e105]
+                  - button "Fullscreen" [ref=e107]
+      - generic [ref=e110]:
+        - generic [ref=e112]:
+          - application "Video Player" [ref=e115]
+          - application "Video Player" [ref=e124]
+          - application "Video Player" [ref=e130]
+          - application "Video Player" [ref=e139]
+          - application "Video Player" [ref=e145]
+          - application "Video Player" [ref=e154]
+          - application "Video Player" [ref=e163]
+          - application "Video Player" [ref=e172]
+          - application "Video Player" [ref=e181]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e190]
+          - application "Video Player" [ref=e193]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e202]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e205]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e208]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e211]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e214]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e217]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e220]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e223]
+          - img "Gray Matter neuroscience brand identity design by Sam Hox — Second Eight Studio" [ref=e226]
+        - heading "I developed the brand identity for Gray Matter, a neuroscience company focused on predictive neurocare that uses advanced brain signal analysis to detect changes in brain health before symptoms appear, enabling earlier and smarter intervention. The logo combines the form of a brain with the letter G, creating a bold, structured mark that reflects clarity and intelligence. The graphics are influenced by the brain’s structure, mathematical mapping, and the natural flow of gray matter. Built with nodes, they are procedurally generated to provide flexibility and depth, featuring glass-like textures, soft motion lines, and abstract numerical forms. The UI is minimal and modern, with bold typography, clean layouts, and subtle motion that reinforce trust and precision. Despite the name, the brand avoids gray, using vibrant, data-inspired colors that convey cognition, energy, and motion." [level=6] [ref=e231]:
+          - text: I developed the brand identity for Gray Matter, a neuroscience company focused on predictive neurocare that uses advanced brain signal analysis to detect changes in brain health before symptoms appear, enabling earlier and smarter intervention.
+          - text: The logo combines the form of a brain with the letter G, creating a bold, structured mark that reflects clarity and intelligence.
+          - text: The graphics are influenced by the brain’s structure, mathematical mapping, and the natural flow of gray matter. Built with nodes, they are procedurally generated to provide flexibility and depth, featuring glass-like textures, soft motion lines, and abstract numerical forms.
+          - text: The UI is minimal and modern, with bold typography, clean layouts, and subtle motion that reinforce trust and precision.
+          - text: Despite the name, the brand avoids gray, using vibrant, data-inspired colors that convey cognition, energy, and motion.
+      - link "Interested in working together? Get in touch!" [ref=e240]:
+        - /url: https://www.secondeight.net/contact
+      - generic [ref=e245]:
+        - link "Prev Kinetica Brand Identity" [ref=e246]:
+          - /url: https://www.secondeight.net/project/kinetica-brand-design
+          - generic [ref=e248]:
+            - generic [ref=e249]: Prev
+            - generic [ref=e250]: Kinetica Brand Identity
+        - link "Next Radial Brand Identity" [ref=e251]:
+          - /url: https://www.secondeight.net/project/radial-brand-design
+          - generic [ref=e253]:
+            - generic [ref=e254]: Next
+            - generic [ref=e255]: Radial Brand Identity
+      - generic [ref=e257]:
+        - paragraph [ref=e260]: Other projects
+        - generic [ref=e261]:
+          - generic [ref=e262]:
+            - link "Gray Matter Brand Identity":
+              - /url: https://www.secondeight.net/project/gray-matter
+              - img [ref=e263]
+            - paragraph [ref=e264]
+          - generic [ref=e265]:
+            - link "Radial Brand Identity":
+              - /url: https://www.secondeight.net/project/radial-brand-design
+              - img [ref=e266]
+            - paragraph [ref=e267]
+          - generic [ref=e268]:
+            - link "Cultiv Brand Identity":
+              - /url: https://www.secondeight.net/project/cultiv-brand-design
+              - img [ref=e269]
+            - paragraph [ref=e270]
+          - generic [ref=e271]:
+            - link "Form Brand Identity":
+              - /url: https://www.secondeight.net/project/form-brand-design
+              - img [ref=e272]
+            - paragraph [ref=e273]
+          - generic [ref=e274]:
+            - link "Bad Decisions Studio Brand Identity":
+              - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+              - img [ref=e275]
+            - paragraph [ref=e276]
+          - generic [ref=e277]:
+            - link "Aevum AI Brand Identity":
+              - /url: https://www.secondeight.net/project/aveum-brand-design
+              - img [ref=e278]
+            - paragraph [ref=e279]
+          - generic [ref=e280]:
+            - link "Sequence Brand Identity":
+              - /url: https://www.secondeight.net/project/sequence-brand-design
+              - img [ref=e281]
+            - paragraph [ref=e282]
+          - generic [ref=e283]:
+            - link "Cellbased Brand Identity":
+              - /url: https://www.secondeight.net/project/cellbased-brand-design
+              - img [ref=e284]
+            - paragraph [ref=e285]
+          - generic [ref=e286]:
+            - link "Augury Brand Identity":
+              - /url: https://www.secondeight.net/project/augury-brand-design
+              - img [ref=e287]
+            - paragraph [ref=e288]
+          - generic [ref=e289]:
+            - link "Receur Brand Identity":
+              - /url: https://www.secondeight.net/project/receur-brand-design
+              - img [ref=e290]
+            - paragraph [ref=e291]
+          - generic [ref=e292]:
+            - link "Plasma Brand Identity":
+              - /url: https://www.secondeight.net/project/plasma-brand-design
+              - img [ref=e293]
+            - paragraph [ref=e294]
+          - generic [ref=e295]:
+            - link "Neurona Brand Identity":
+              - /url: https://www.secondeight.net/project/neurona-brand-design
+              - img [ref=e296]
+            - paragraph [ref=e297]
+          - generic [ref=e298]:
+            - link "Nodelink Brand Identity":
+              - /url: https://www.secondeight.net/project/nodelink-brand-design
+              - img [ref=e299]
+            - paragraph [ref=e300]
+          - generic [ref=e301]:
+            - link "Revival Brand Identity":
+              - /url: https://www.secondeight.net/project/revival-brand-design
+              - img [ref=e302]
+            - paragraph [ref=e303]
+          - generic [ref=e304]:
+            - link "Klue Brand Identity":
+              - /url: https://www.secondeight.net/project/klue
+              - img [ref=e305]
+            - paragraph [ref=e306]
+          - generic [ref=e307]:
+            - link "Zeonite Brand Identity":
+              - /url: https://www.secondeight.net/project/zeonite-brand-design
+              - img [ref=e308]
+            - paragraph [ref=e309]
+          - generic [ref=e310]:
+            - link "Beyond Surgical Brand Identity":
+              - /url: https://www.secondeight.net/project/beyond-surgical-brand-design
+              - img [ref=e311]
+            - paragraph [ref=e312]
+          - generic [ref=e313]:
+            - link "Blame Brand Identity":
+              - /url: https://www.secondeight.net/project/blame-brand-design
+              - img [ref=e314]
+            - paragraph [ref=e315]
+          - generic [ref=e316]:
+            - link "Kinetica Brand Identity":
+              - /url: https://www.secondeight.net/project/kinetica-brand-design
+              - img [ref=e317]
+            - paragraph [ref=e318]
+      - generic [ref=e321]:
+        - paragraph [ref=e326]: © Sam Hox 2026
+        - paragraph [ref=e331]:
+          - generic [ref=e332]:
+            - link "Instagram" [ref=e333]:
+              - /url: https://www.instagram.com/eight.seconds/
+            - link "X" [ref=e334]:
+              - /url: https://x.com/secondeight_
+            - link "Linkedin" [ref=e335]:
+              - /url: https://www.linkedin.com/in/secondeight/
+            - link "Threads" [ref=e336]:
+              - /url: https://www.threads.net/@eight.seconds
+  - generic: "1.252"

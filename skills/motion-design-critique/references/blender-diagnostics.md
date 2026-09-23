@@ -238,3 +238,41 @@ If the render is the issue (not the viewport), force an update before rendering:
 ```python
 bpy.context.view_layer.update()
 ```
+
+---
+
+## Higgsfield Bridge failures
+
+### Bridge tools missing or calls fail with an auth error
+
+The bridge isn't registered or the sign-in expired.
+
+Fix: confirm `HiggsfieldBridge` shows in the agent's MCP list (`claude mcp list` or `codex mcp list`). Re-authenticate (`/mcp` in Claude Code, `codex mcp login HiggsfieldBridge` in Codex).
+
+---
+
+### Bridge connects but nothing lands in the scene
+
+The add-on is signed out, disabled, or Blender is older than 5.1.
+
+Fix: sign in on the floating Higgsfield bar. Confirm the add-on is enabled in Edit > Preferences > Add-ons. On Blender 5.0 or older, update Blender. There is no workaround.
+
+---
+
+### Generation fails partway or returns nothing
+
+Usually out of credits or hitting a plan rate limit. Ask the user to check their balance. Don't retry in a loop; one retry after a yes.
+
+---
+
+### Generated objects are huge, tiny, or far from the origin
+
+Generated meshes arrive at arbitrary scale and location. This is a bpy fix, not a regeneration.
+
+Fix: read dimensions with the Blender MCP, scale against a known object in the scene, apply scale, then move into place. Apply scale before adding modifiers like Bevel, or they'll behave inconsistently.
+
+---
+
+### Blockout looks fine in viewport, falls apart in render
+
+Scene Builder output is previz geometry. Normals may be inconsistent and there may be no bevels. Recalculate normals and add a Bevel modifier for close-ups, or replace hero objects with a 3D Model generation. See `blender-motion/references/higgsfield-bridge.md`.

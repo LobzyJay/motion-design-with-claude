@@ -1,0 +1,25 @@
+# Codex CLI config for running this repo with GPT-6 Astra.
+# Merge into ~/.codex/config.toml. Adjust paths for your machine.
+
+model = "gpt-6-astra"
+model_reasoning_effort = "high"   # xhigh for long multi-step builds
+
+# After Effects MCP (TheLlamainator). Needs mcp-bridge-auto.jsx open in AE with Auto-run ticked.
+[mcp_servers.AfterEffectsMCP]
+command = "node"
+args = ["/absolute/path/to/after-effects-mcp/build/index.js"]
+
+# Official Blender Lab MCP. Blender serves SSE, so mcp-remote bridges it to stdio for Codex.
+[mcp_servers.BlenderMCP]
+command = "npx"
+args = ["-y", "mcp-remote", "http://localhost:9876/sse"]
+
+# Optional. Higgsfield Bridge into the Blender add-on and AE plugin.
+# Authenticate once with: codex mcp login HiggsfieldBridge
+[mcp_servers.HiggsfieldBridge]
+url = "https://bridge.higgsfield.ai/mcp"
+
+# Optional. Higgsfield generation MCP for standalone images and video.
+# Authenticate once with: codex mcp login Higgsfield
+[mcp_servers.Higgsfield]
+url = "https://mcp.higgsfield.ai/mcp"

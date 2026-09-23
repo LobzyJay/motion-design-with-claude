@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill QA Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0d1117;
+  --surf:    #161b22;
+  --surf2:   #1c2128;
+  --surf3:   #21262d;
+  --border:  #30363d;
+  --text:    #e6edf3;
+  --muted:   #8b949e;
+  --green:   #3fb950;
+  --green-d: rgba(63,185,80,.15);
+  --green-b: rgba(63,185,80,.3);
+  --red:     #f85149;
+  --red-d:   rgba(248,81,73,.15);
+  --red-b:   rgba(248,81,73,.3);
+  --yellow:  #d29922;
+  --yellow-d:rgba(210,153,34,.15);
+  --yellow-b:rgba(210,153,34,.3);
+  --blue:    #58a6ff;
+  --blue-d:  rgba(88,166,255,.15);
+  --blue-b:  rgba(88,166,255,.3);
+  --font:    'JetBrains Mono', 'Fira Code', monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px;line-height:1.5;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── Header ── */
+.hdr{display:flex;align-items:center;gap:16px;padding:10px 20px;border-bottom:1px solid var(--border);background:var(--surf);flex-shrink:0}
+.hdr-title{font-size:13px;font-weight:700;letter-spacing:.12em;flex:1}
+.hdr-title .accent{color:var(--green)}
+.hdr-sub{font-size:10px;color:var(--muted);letter-spacing:.05em}
+.hdr-actions{display:flex;gap:8px}
+
+/* ── Layout ── */
+.layout{display:flex;flex:1;overflow:hidden}
+.sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);overflow-y:auto;background:var(--surf)}
+.content{flex:1;overflow-y:auto;padding:24px}
+
+/* ── Sidebar ── */
+.slab{padding:12px 14px 6px;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.skill-item{padding:10px 14px;cursor:pointer;border-left:3px solid transparent;transition:background .12s}
+.skill-item:hover{background:var(--surf2)}
+.skill-item.active{border-left-color:var(--green);background:var(--surf2)}
+.skill-item .s-name{font-weight:700;font-size:12px}
+.skill-item .s-desc{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ── Buttons ── */
+.btn{padding:6px 14px;font-family:var(--font);font-size:11px;font-weight:700;border:1px solid var(--border);background:var(--surf2);color:var(--text);cursor:pointer;letter-spacing:.06em;border-radius:3px;transition:all .12s;white-space:nowrap}
+.btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+.btn.go{background:var(--green);color:#0d1117;border-color:var(--green)}
+.btn.go:hover:not(:disabled){opacity:.85}
+.btn.run{background:var(--blue-d);color:var(--blue);border-color:var(--blue-b)}
+.btn.run:hover:not(:disabled){background:var(--blue);color:var(--bg)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+
+/* ── Skill header ── */
+.skill-hdr{margin-bottom:20px}
+.skill-hdr h1{font-size:16px;font-weight:700}
+.skill-hdr .trigger{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5;max-width:720px}
+
+/* ── Control bar ── */
+.ctrl{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--surf);border:1px solid var(--border);border-radius:4px;margin-bottom:20px}
+.ctrl-hint{font-size:10px;color:var(--muted);flex:1;line-height:1.4}
+.ctrl-count{font-size:10px;color:var(--muted)}
+input[type=number]{width:48px;padding:4px 6px;background:var(--surf3);border:1px solid var(--border);color:var(--text);font-family:var(--font);font-size:11px;border-radius:3px;text-align:center}
+input[type=number]:focus{outline:none;border-color:var(--blue)}
+
+/* ── Status bar ── */
+.stat-bar{display:flex;align-items:center;gap:20px;padding:14px 18px;background:var(--surf);border:1px solid var(--border);border-radius:4px;margin-bottom:20px}
+.health-num{font-size:24px;font-weight:700;line-height:1;color:var(--green);min-width:48px}
+.health-num.mid{color:var(--yellow)}
+.health-num.low{color:var(--red)}
+.health-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.health-fill{height:100%;border-radius:3px;transition:width .4s,background .4s}
+.stat-cols{display:flex;gap:20px;flex-shrink:0}
+.stat-col{text-align:center}
+.stat-val{font-size:16px;font-weight:700}
+.stat-lbl{font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+
+/* ── Prompt preview ── */
+.prompts-section{margin-bottom:20px}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.prompt-chips{display:flex;flex-direction:column;gap:6px}
+.p-chip{padding:8px 12px;background:var(--surf);border:1px solid var(--border);border-radius:3px;font-size:11px;color:var(--muted);line-height:1.4;border-left-width:3px}
+.p-chip.green{border-left-color:var(--green);color:var(--text)}
+.p-chip.red{border-left-color:var(--red);color:var(--text)}
+.p-chip-tag{font-size:9px;font-weight:700;letter-spacing:.1em;margin-right:6px;text-transform:uppercase}
+.p-chip.green .p-chip-tag{color:var(--green)}
+.p-chip.red .p-chip-tag{color:var(--red)}
+
+/* ── Test cards ── */
+.results-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.results-label{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;flex:1}
+
+.card{border:1px solid var(--border);border-radius:4px;margin-bottom:10px;background:var(--surf);overflow:hidden}
+.card-top{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;cursor:pointer;user-select:none}
+.card-top:hover{background:var(--surf2)}
+.badge{font-size:9px;font-weight:700;letter-spacing:.12em;padding:3px 8px;border-radius:2px;flex-shrink:0;margin-top:1px;text-transform:uppercase;display:flex;align-items:center;gap:4px}
+.badge.green{background:var(--green-d);color:var(--green);border:1px solid var(--green-b)}
+.badge.red{background:var(--red-d);color:var(--red);border:1px solid var(--red-b)}
+.badge.running{background:var(--blue-d);color:var(--blue);border:1px solid var(--blue-b)}
+.badge.grading{background:var(--yellow-d);color:var(--yellow);border:1px solid var(--yellow-b)}
+
+.card-prompt{flex:1;font-size:12px;color:var(--text);line-height:1.4}
+.card-scores{display:flex;gap:5px;flex-shrink:0;align-items:flex-start;flex-wrap:wrap;max-width:200px;justify-content:flex-end}
+.pill{font-size:9px;padding:2px 7px;border-radius:2px;font-weight:700;border:1px solid var(--border);color:var(--muted);background:var(--surf3);white-space:nowrap}
+.pill.hi{color:var(--green);border-color:var(--green-b)}
+.pill.mid{color:var(--yellow);border-color:var(--yellow-b)}
+.pill.lo{color:var(--red);border-color:var(--red-b)}
+.pill.pass{color:var(--green);border-color:var(--green-b)}
+.pill.fail{color:var(--red);border-color:var(--red-b)}
+
+.card-verdict{font-size:11px;color:var(--muted);padding:0 14px 10px 14px;margin-left:62px;line-height:1.5;font-style:italic}
+
+/* Card body (expandable) */
+.card-body{display:none;border-top:1px solid var(--border)}
+.card-body.open{display:block}
+
+.grade-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.grade-cell{background:var(--surf3);padding:10px;text-align:center}
+.grade-val{font-size:18px;font-weight:700;line-height:1}
+.grade-lbl{font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.diff-pane{padding:14px}
+.diff-pane:first-child{border-right:1px solid var(--border)}
+.diff-lbl{font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.diff-lbl .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);display:inline-block}
+.diff-lbl .dot.green{background:var(--green)}
+.diff-lbl .dot.grey{background:var(--muted)}
+.diff-text{font-size:11px;color:var(--text);line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow-y:auto}
+
+/* ── Spinner ── */
+.spin{display:inline-block;width:10px;height:10px;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite;opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── Empty / loading states ── */
+.empty{text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-icon{font-size:28px;margin-bottom:12px;opacity:.4}
+.empty-text{font-size:12px;line-height:1.6}
+.empty-text strong{color:var(--text)}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+/* ── Misc ── */
+.divider{height:1px;background:var(--border);margin:20px 0}
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:2px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div>
+    <div class="hdr-title">SKILL <span class="accent">QA</span> TOOL</div>
+    <div class="hdr-sub">stress-tester for motion design skills</div>
+  </div>
+  <div class="hdr-actions">
+    <button class="btn" id="btnExportJson" onclick="exportJSON()" disabled>Export JSON</button>
+    <button class="btn" id="btnExportMd" onclick="exportMarkdown()" disabled>Export MD</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar">
+    <div class="slab">Skills</div>
+    <div id="skillList"><div style="padding:16px;color:var(--muted);font-size:11px">Loading…</div></div>
+  </nav>
+  <main class="content" id="content">
+    <div class="empty">
+      <div class="empty-icon">◈</div>
+      <div class="empty-text">Select a skill from the sidebar<br>to generate and run tests.</div>
+    </div>
+  </main>
+</div>
+
+<script>
+// ── Prompts ─────────────────────────────────────────────────────
+
+const GRADER_SYS = `You are a strict QA agent evaluating whether Claude followed a skill's instructions correctly.
+
+You receive a JSON string with three fields:
+- SKILL: the full SKILL.md content that was injected as Claude's system prompt
+- PROMPT: the user-facing test prompt
+- OUTPUT: Claude's response to evaluate
+
+Evaluate and return ONLY valid JSON (no markdown fences, no extra text):
+{
+  "skill_adherence": <integer 0-10>,
+  "output_quality": <integer 0-10>,
+  "edge_case_handling": "pass" | "fail",
+  "trigger_accuracy": "yes" | "no",
+  "verdict": "<1-2 sentence summary>"
+}
+
+Rubric:
+- skill_adherence (0-10): Does the output follow the skill's hard rules, voice rules, and behavioral constraints? 0 = completely ignores skill, 10 = perfectly follows every constraint.
+- output_quality (0-10): Is the output useful, specific, and well-crafted for a working designer? 0 = useless generic, 10 = exactly what the skill promises.
+- edge_case_handling: "pass" if the model handles the prompt gracefully (including adversarial/off-topic ones); "fail" if it breaks the skill's constraints or degrades badly.
+- trigger_accuracy: "yes" if the skill's triggers correctly apply to this prompt type; "no" if the skill seems irrelevant and should not have been triggered.
+- verdict: One or two direct sentences on whether the output honored the skill. Be specific.`;
+
+const PROMPT_GEN_SYS = `You are a QA engineer building test cases for a skill injection system. A skill is a system prompt that shapes Claude's behavior for a specific domain.
+
+Given a SKILL.md file, generate exactly 3 green and 3 red test prompts.
+
+GREEN prompts: realistic requests a working designer would send that this skill is built to handle. They should match the skill's trigger keywords, invoke its hard rules, and benefit from the skill's expertise. Each should be 1-3 sentences, realistic, and specific.
+
+RED prompts: adversarial or edge-case requests that stress-test the skill. Ideas: prompts from outside the skill's scope that might cause drift, prompts that contradict the skill's hard rules to see if it holds, ambiguous requests that might produce generic output, requests that test the skill's voice rules.
+
+Return ONLY valid JSON (no markdown fences, no explanation):
+{"green":["prompt1","prompt2","prompt3"],"red":["prompt1","prompt2","prompt3"]}`;
+
+// ── State ────────────────────────────────────────────────────────
+
+const S = {
+  skills: [],
+  selected: null,
+  prompts: { green: [], red: [] },
+  results: [],
+  status: 'idle', // idle | generating | running | done
+  counts: { green: 3, red: 3 }
+};
+
+// ── API ──────────────────────────────────────────────────────────
+
+async function apiGet(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+async function apiPost(url, body) {
+  const r = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (!r.ok) throw new Error(`${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+async function claude(system, userMsg) {
+  const resp = await apiPost('/api/claude', {
+    system: system || undefined,
+    messages: [{ role: 'user', content: userMsg }]
+  });
+  if (!resp.content?.[0]?.text) throw new Error('Empty API response');
+  return resp.content[0].text;
+}
+
+function parseJSON(text) {
+  const cleaned = text.replace(/^```json\n?/m, '').replace(/^```\n?/m, '').replace(/```$/m, '').trim();
+  return JSON.parse(cleaned);
+}
+
+// ── Skills ───────────────────────────────────────────────────────
+
+async function init() {
+  try {
+    S.skills = await apiGet('/api/skills');
+    renderSidebar();
+  } catch (e) {
+    document.getElementById('skillList').innerHTML =
+      `<div style="padding:16px;color:var(--red);font-size:11px">Error: ${esc(e.message)}</div>`;
+  }
+}
+
+function selectSkill(id) {
+  S.selected = S.skills.find(s => s.id === id) || null;
+  S.prompts = { green: [], red: [] };
+  S.results = [];
+  S.status = 'idle';
+  renderSidebar();
+  renderContent();
+  document.getElementById('btnExportJson').disabled = true;
+  document.getElementById('btnExportMd').disabled = true;
+}
+
+// ── Generate prompts ─────────────────────────────────────────────
+
+async function generatePrompts() {
+  if (!S.selected || S.status === 'generating' || S.status === 'running') return;
+  S.status = 'generating';
+  S.prompts = { green: [], red: [] };
+  S.results = [];
+  renderContent();
+
+  try {
+    const n = S.counts;
+    const prompt = `Generate exactly ${n.green} green and ${n.red} red test prompts for this skill:\n\n${S.selected.raw}`;
+    // Adjust the instruction in the system prompt to match count
+    const sys = PROMPT_GEN_SYS.replace('3 green and 3 red', `${n.green} green and ${n.red} red`)
+      .replace('["prompt1","prompt2","prompt3"],"red":["prompt1","prompt2","prompt3"]',
+               `[${Array(n.green).fill(0).map((_,i)=>`"prompt${i+1}"`).join(',')}],"red":[${Array(n.red).fill(0).map((_,i)=>`"prompt${i+1}"`).join(',')}]`);
+    const raw = await claude(sys, prompt);
+    const parsed = parseJSON(raw);
+    S.prompts = {
+      green: (parsed.green || []).slice(0, n.green),
+      red: (parsed.red || []).slice(0, n.red)
+    };
+  } catch (e) {
+    S.prompts = { green: [`[Generate error: ${e.message}]`], red: [] };
+  }
+
+  S.status = 'idle';
+  renderContent();
+}
+
+// ── Run tests ────────────────────────────────────────────────────
+
+async function runAllTests() {
+  if (!S.selected || S.status === 'running') return;
+  const all = [
+    ...S.prompts.green.map(p => ({ prompt: p, type: 'green' })),
+    ...S.prompts.red.map(p => ({ prompt: p, type: 'red' }))
+  ];
+  if (!all.length) return;
+
+  S.status = 'running';
+  S.results = [];
+  renderContent();
+
+  const promises = all.map(async ({ prompt, type }) => {
+    const result = { prompt, type, withSkill: null, withoutSkill: null, grade: null, status: 'running' };
+    S.results.push(result);
+    renderResults();
+
+    const [withSkill, withoutSkill] = await Promise.all([
+      claude(S.selected.raw, prompt).catch(e => `[Error: ${e.message}]`),
+      claude(null, prompt).catch(e => `[Error: ${e.message}]`)
+    ]);
+
+    result.withSkill = withSkill;
+    result.withoutSkill = withoutSkill;
+    result.status = 'grading';
+    renderResults();
+
+    try {
+      const gradeInput = JSON.stringify({ SKILL: S.selected.raw, PROMPT: prompt, OUTPUT: withSkill });
+      const raw = await claude(GRADER_SYS, gradeInput);
+      result.grade = parseJSON(raw);
+    } catch (e) {
+      result.grade = {
+        skill_adherence: 0, output_quality: 0,
+        edge_case_handling: 'fail', trigger_accuracy: 'no',
+        verdict: `Grade parse error: ${e.message}`
+      };
+    }
+
+    result.status = 'done';
+    renderResults();
+  });
+
+  await Promise.all(promises);
+  S.status = 'done';
+  renderStatBar();
+  document.getElementById('btnExportJson').disabled = false;
+  document.getElementById('btnExportMd').disabled = false;
+}
+
+// ── Health score ─────────────────────────────────────────────────
+
+function healthScore() {
+  const graded = S.results.filter(r => r.grade);
+  if (!graded.length) return 0;
+  const sum = graded.reduce((acc, r) => acc + (r.grade.skill_adherence + r.grade.output_quality) / 2, 0);
+  return Math.round((sum / graded.length) * 10) / 10;
+}
+
+function scoreColor(n) {
+  if (n >= 7) return 'var(--green)';
+  if (n >= 4) return 'var(--yellow)';
+  return 'var(--red)';
+}
+
+function pillClass(val, isScore = true) {
+  if (isScore) {
+    if (val >= 7) return 'hi';
+    if (val >= 4) return 'mid';
+    return 'lo';
+  }
+  return val === 'pass' || val === 'yes' ? 'pass' : 'fail';
+}
+
+// ── Render ───────────────────────────────────────────────────────
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderSidebar() {
+  document.getElementById('skillList').innerHTML = S.skills.map(s => `
+    <div class="skill-item ${S.selected?.id === s.id ? 'active' : ''}" onclick="selectSkill('${esc(s.id)}')">
+      <div class="s-name">${esc(s.name)}</div>
+      <div class="s-desc">${esc(s.description.slice(0, 72))}…</div>
+    </div>
+  `).join('') || '<div style="padding:16px;color:var(--muted);font-size:11px">No skills found</div>';
+}
+
+function renderContent() {
+  if (!S.selected) {
+    document.getElementById('content').innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">◈</div>
+        <div class="empty-text">Select a skill from the sidebar<br>to generate and run tests.</div>
+      </div>`;
+    return;
+  }
+
+  const isGenerating = S.status === 'generating';
+  const isRunning = S.status === 'running';
+  const hasPrompts = S.prompts.green.length || S.prompts.red.length;
+  const busy = isGenerating || isRunning;
+
+  document.getElementById('content').innerHTML = `
+    <div class="skill-hdr">
+      <h1>${esc(S.selected.name)}</h1>
+      <div class="trigger">${esc(S.selected.description.slice(0, 280))}…</div>
+    </div>
+
+    <div class="ctrl">
+      <div class="ctrl-hint">
+        Generate test prompts from the skill content, then run them with and without the skill active.
+      </div>
+      <label class="ctrl-count">
+        <span style="color:var(--green)">Green</span>&nbsp;
+        <input type="number" id="cntGreen" min="1" max="6" value="${S.counts.green}" onchange="S.counts.green=+this.value" style="width:40px">
+      </label>
+      <label class="ctrl-count">
+        <span style="color:var(--red)">Red</span>&nbsp;
+        <input type="number" id="cntRed" min="1" max="6" value="${S.counts.red}" onchange="S.counts.red=+this.value" style="width:40px">
+      </label>
+      <button class="btn go" onclick="generatePrompts()" ${busy ? 'disabled' : ''}>
+        ${isGenerating ? '<span class="spin"></span> Generating…' : 'Generate Prompts'}
+      </button>
+      <button class="btn run" onclick="runAllTests()" ${!hasPrompts || busy ? 'disabled' : ''}>
+        ${isRunning ? '<span class="spin"></span> Running…' : 'Run All Tests'}
+      </button>
+    </div>
+
+    ${hasPrompts && !isGenerating ? renderPromptPreview() : ''}
+
+    <div id="stat-bar-slot"></div>
+    <div id="results-slot"></div>
+  `;
+
+  renderStatBar();
+  renderResults();
+}
+
+function renderPromptPreview() {
+  const chips = [
+    ...S.prompts.green.map(p => `<div class="p-chip green"><span class="p-chip-tag">green</span>${esc(p)}</div>`),
+    ...S.prompts.red.map(p => `<div class="p-chip red"><span class="p-chip-tag">red</span>${esc(p)}</div>`)
+  ].join('');
+  return `
+    <div class="prompts-section">
+      <div class="section-label">Generated Test Prompts</div>
+      <div class="prompt-chips">${chips}</div>
+    </div>
+    <div class="divider"></div>`;
+}
+
+function renderStatBar() {
+  const slot = document.getElementById('stat-bar-slot');
+  if (!slot) return;
+  const graded = S.results.filter(r => r.grade);
+  if (!graded.length) { slot.innerHTML = ''; return; }
+
+  const h = healthScore();
+  const pct = (h / 10) * 100;
+  const hClass = h >= 7 ? '' : h >= 4 ? ' mid' : ' low';
+  const hColor = scoreColor(h);
+
+  const passes = graded.filter(r => r.grade.edge_case_handling === 'pass').length;
+  const fails = graded.length - passes;
+  const greenPass = S.results.filter(r => r.type === 'green' && r.grade?.skill_adherence >= 7).length;
+
+  slot.innerHTML = `
+    <div class="stat-bar">
+      <div class="health-num${hClass}">${h}</div>
+      <div style="flex:1">
+        <div style="font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px">Health Score</div>
+        <div class="health-track"><div class="health-fill" style="width:${pct}%;background:${hColor}"></div></div>
+      </div>
+      <div class="stat-cols">
+        <div class="stat-col">
+          <div class="stat-val" style="color:var(--green)">${passes}</div>
+          <div class="stat-lbl">Pass</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-val" style="color:var(--red)">${fails}</div>
+          <div class="stat-lbl">Fail</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-val">${graded.length}/${S.results.length}</div>
+          <div class="stat-lbl">Graded</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-val" style="color:var(--green)">${greenPass}</div>
+          <div class="stat-lbl">Green Pass</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderResults() {
+  const slot = document.getElementById('results-slot');
+  if (!slot || !S.results.length) return;
+
+  const label = `<div class="results-header"><div class="results-label">Test Results</div></div>`;
+  const cards = S.results.map((r, i) => renderCard(r, i)).join('');
+  slot.innerHTML = label + cards;
+}
+
+function renderCard(r, i) {
+  if (r.status === 'running') {
+    return `<div class="card">
+      <div class="card-top" style="cursor:default">
+        <div class="badge running"><span class="spin"></span> Running</div>
+        <div class="card-prompt">${esc(r.prompt)}</div>
+      </div>
+    </div>`;
+  }
+
+  if (r.status === 'grading') {
+    return `<div class="card">
+      <div class="card-top" style="cursor:default">
+        <div class="badge grading"><span class="spin"></span> Grading</div>
+        <div class="card-prompt">${esc(r.prompt)}</div>
+      </div>
+    </div>`;
+  }
+
+  const g = r.grade;
+  const scores = g ? `
+    <div class="card-scores">
+      <span class="pill ${pillClass(g.skill_adherence)}" title="Skill adherence">A:${g.skill_adherence}</span>
+      <span class="pill ${pillClass(g.output_quality)}" title="Output quality">Q:${g.output_quality}</span>
+      <span class="pill ${pillClass(g.edge_case_handling, false)}" title="Edge case handling">${g.edge_case_handling}</span>
+      <span class="pill ${pillClass(g.trigger_accuracy, false)}" title="Trigger accuracy">TA:${g.trigger_accuracy}</span>
+    </div>` : '';
+
+  const verdict = g ? `<div class="card-verdict">${esc(g.verdict)}</div>` : '';
+
+  const bodyId = `cb-${i}`;
+  const gradeRow = g ? `
+    <div class="grade-row">
+      <div class="grade-cell">
+        <div class="grade-val" style="color:${scoreColor(g.skill_adherence)}">${g.skill_adherence}<span style="font-size:11px;color:var(--muted)">/10</span></div>
+        <div class="grade-lbl">Adherence</div>
+      </div>
+      <div class="grade-cell">
+        <div class="grade-val" style="color:${scoreColor(g.output_quality)}">${g.output_quality}<span style="font-size:11px;color:var(--muted)">/10</span></div>
+        <div class="grade-lbl">Quality</div>
+      </div>
+      <div class="grade-cell">
+        <div class="grade-val" style="color:${g.edge_case_handling === 'pass' ? 'var(--green)' : 'var(--red)'}">${g.edge_case_handling.toUpperCase()}</div>
+        <div class="grade-lbl">Edge Case</div>
+      </div>
+      <div class="grade-cell">
+        <div class="grade-val" style="color:${g.trigger_accuracy === 'yes' ? 'var(--green)' : 'var(--red)'}">${g.trigger_accuracy.toUpperCase()}</div>
+        <div class="grade-lbl">Triggered</div>
+      </div>
+    </div>` : '';
+
+  const diffGrid = `
+    <div class="diff-grid">
+      <div class="diff-pane">
+        <div class="diff-lbl"><span class="dot green"></span> With Skill</div>
+        <div class="diff-text">${esc(r.withSkill || '')}</div>
+      </div>
+      <div class="diff-pane">
+        <div class="diff-lbl"><span class="dot grey"></span> Baseline (no skill)</div>
+        <div class="diff-text">${esc(r.withoutSkill || '')}</div>
+      </div>
+    </div>`;
+
+  return `<div class="card">
+    <div class="card-top" onclick="toggleCard('${bodyId}')">
+      <div class="badge ${r.type}">${r.type === 'green' ? '▲ GREEN' : '▼ RED'}</div>
+      <div class="card-prompt">${esc(r.prompt)}</div>
+      ${scores}
+    </div>
+    ${verdict}
+    <div class="card-body" id="${bodyId}">
+      ${gradeRow}
+      ${diffGrid}
+    </div>
+  </div>`;
+}
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// ── Export ───────────────────────────────────────────────────────
+
+function exportJSON() {
+  const data = {
+    skill: S.selected?.name,
+    skill_id: S.selected?.id,
+    date: new Date().toISOString(),
+    health_score: healthScore(),
+    prompts: S.prompts,
+    results: S.results.map(r => ({
+      type: r.type,
+      prompt: r.prompt,
+      grade: r.grade,
+      with_skill: r.withSkill,
+      without_skill: r.withoutSkill
+    }))
+  };
+  download(`skill-qa-${S.selected?.id}-${Date.now()}.json`, JSON.stringify(data, null, 2), 'application/json');
+}
+
+function exportMarkdown() {
+  const h = healthScore();
+  const graded = S.results.filter(r => r.grade);
+  const passes = graded.filter(r => r.grade.edge_case_handling === 'pass').length;
+
+  let md = `# Skill QA Report: ${S.selected?.name}\n\n`;
+  md += `**Date:** ${new Date().toLocaleString()}\n`;
+  md += `**Health Score:** ${h}/10\n`;
+  md += `**Tests:** ${graded.length} graded, ${passes} passed\n\n`;
+  md += `---\n\n`;
+
+  S.results.forEach((r, i) => {
+    if (!r.grade) return;
+    const g = r.grade;
+    md += `## Test ${i + 1} — ${r.type.toUpperCase()}\n\n`;
+    md += `**Prompt:** ${r.prompt}\n\n`;
+    md += `| Metric | Score |\n|---|---|\n`;
+    md += `| Skill Adherence | ${g.skill_adherence}/10 |\n`;
+    md += `| Output Quality | ${g.output_quality}/10 |\n`;
+    md += `| Edge Case Handling | ${g.edge_case_handling} |\n`;
+    md += `| Trigger Accuracy | ${g.trigger_accuracy} |\n\n`;
+    md += `**Verdict:** ${g.verdict}\n\n`;
+    md += `<details>\n<summary>With Skill</summary>\n\n\`\`\`\n${r.withSkill}\n\`\`\`\n</details>\n\n`;
+    md += `<details>\n<summary>Baseline (no skill)</summary>\n\n\`\`\`\n${r.withoutSkill}\n\`\`\`\n</details>\n\n`;
+    md += `---\n\n`;
+  });
+
+  download(`skill-qa-${S.selected?.id}-${Date.now()}.md`, md, 'text/markdown');
+}
+
+function download(filename, content, type) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([content], { type }));
+  a.download = filename;
+  a.click();
+}
+
+// ── Boot ─────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 ---
 name: blender-motion
-description: Use this skill whenever Blender is the working tool. Triggers on "Blender", "bpy", "geometry nodes", "Cycles", "EEVEE", "Principled BSDF", "F-curve", "NLA", "keyframe in Blender", "3D motion graphics", "Blender render", "shape keys", "drivers", or any Blender-driven motion or rendering task. Pair with motion-design (foundation skill) for principles, timing, and taste. Blender MCP server: official Blender Lab MCP at projects.blender.org/lab/blender_mcp.
+description: Use this skill whenever Blender is the working tool. Triggers on "Blender", "bpy", "geometry nodes", "Cycles", "EEVEE", "Principled BSDF", "F-curve", "NLA", "keyframe in Blender", "3D motion graphics", "Blender render", "shape keys", "drivers", or any Blender-driven motion or rendering task. Also triggers on "Higgsfield", "Scene Builder", "blockout", "generate a mesh", "rigged character", "Seedance" in a Blender context. Pair with motion-design (foundation skill) for principles, timing, and taste. Blender MCP server: official Blender Lab MCP at projects.blender.org/lab/blender_mcp. Optional Higgsfield Bridge MCP: bridge.higgsfield.ai/mcp.
 ---
 
 # Blender Motion
 
-You are driving Blender through the official Blender Lab MCP. The user is directing you like a creative director. They define the look; you execute it.
+You are driving Blender through the official Blender Lab MCP, and optionally the Higgsfield Bridge. The user is directing you like a creative director. They define the look; you execute it.
 
 ## What you are not
 
@@ -16,14 +16,11 @@ You are driving Blender through the official Blender Lab MCP. The user is direct
 
 ## Setup (once per session)
 
-The MCP server must be running before any tool calls.
+Blender MCP: enable the add-on, click **Start MCP Server**, confirm "MCP Server running on localhost:9876". If it fails, restart Blender and start the server again. Full steps in `references/operational-canon.md`.
 
-1. In Blender: Edit > Preferences > Add-ons > find **Blender MCP** > Enable it.
-2. In the add-on preferences: click **Start MCP Server**.
-3. Confirm: "MCP Server running on localhost:9876".
-4. First prompt to verify: "Connect to Blender MCP and tell me what objects are in my current scene."
+## Two MCPs, two jobs
 
-If the connection fails, the server is not running or the port is blocked. The user restarts Blender, re-enables the add-on, and clicks Start MCP Server again.
+The Blender MCP reads and controls what exists (bpy). The Higgsfield Bridge generates what doesn't: blockouts, meshes, rigged characters, textures, Seedance clips. Never use the bridge for something bpy does exactly. The Blender MCP is the source of truth. See `references/higgsfield-bridge.md`.
 
 ## Six prompting principles (loaded at session start)
 
@@ -43,6 +40,8 @@ These are Adewale's rules for directing Claude in Blender. Apply them to every s
 3. Before final render: audit for hidden objects, wrong material assignments, camera framing, render settings. Catching a hidden object beats finding it in the render output.
 4. bpy scripts must be idempotent. Anything that sets a value should safely overwrite a previous value without requiring a clean scene.
 5. Do not make creative decisions. If the brief is vague on the look, ask for a reference image. Do not invent a material or lighting treatment.
+6. Higgsfield generations spend the user's credits. Say what you'll generate, wait for a yes, one generation per yes. No variants unless asked.
+7. Audit after every bridge build: `get_objects_summary`, rename, collect. Seedance renders follow the F12 rule.
 
 ## When to load which reference
 
@@ -58,6 +57,7 @@ These are Adewale's rules for directing Claude in Blender. Apply them to every s
 | Drivers (property-driving-property) | `references/drivers.md` |
 | Geometry nodes for motion | `references/geometry-nodes-motion.md` |
 | Render setup, color management, OIDN | `references/render-and-color.md` |
+| Higgsfield blockouts, generated assets, Seedance | `references/higgsfield-bridge.md` |
 
 Lazy-load. Don't load everything up front.
 
@@ -65,7 +65,7 @@ Lazy-load. Don't load everything up front.
 
 1. User describes goal or drops a reference image.
 2. Read the scene (objects, materials, camera, lights).
-3. Ask one blocking question, if any. Don't ask about creative taste — make a call and let the user push back.
+3. Ask one blocking question, if any. Don't ask about creative taste. Make a call and let the user push back.
 4. Execute changes.
 5. Trigger EEVEE preview render. Show the user the result.
 6. User responds with what's wrong. Translate into specific bpy changes.
