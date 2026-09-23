@@ -122,6 +122,44 @@ Fix: call the state dump script and read the fresh JSON. Do not patch based on d
 
 ---
 
+## Higgsfield Bridge failures
+
+### Bridge tools missing or calls fail with an auth error
+
+The bridge isn't registered or the sign-in expired.
+
+Fix: confirm `HiggsfieldBridge` shows in the agent's MCP list (`claude mcp list` or `codex mcp list`). Re-authenticate (`/mcp` in Claude Code, `codex mcp login HiggsfieldBridge` in Codex).
+
+---
+
+### Bridge connects but nothing lands in AE
+
+The Higgsfield panel is closed or signed out, or AE is older than 2024 (24.0).
+
+Fix: Window > Extensions > Higgsfield AI, sign in, keep the panel open. If AE is 2023 or older, the plugin won't run. There is no workaround.
+
+---
+
+### Generation fails partway or returns nothing
+
+Usually out of credits or hitting a plan rate limit. Ask the user to check their balance in the panel. Don't retry in a loop; one retry after a yes.
+
+---
+
+### JSX targets the wrong layer after a bridge operation
+
+The bridge added layers and shifted the stack. The script was written against a pre-bridge state.
+
+Fix: state dump, then rewrite the JSX to target layers by name. See `aftereffects-motion/references/higgsfield-bridge.md`.
+
+---
+
+### Remove Background edges chatter or fringe
+
+Check at 200% on a hair or motion-blur frame. If the key is soft, a Refine Soft Matte pass on the keyed layer usually beats regenerating. Regenerate only if the subject is lost on whole frames.
+
+---
+
 ## Render and playback issues
 
 ### RAM preview is slow / choppy

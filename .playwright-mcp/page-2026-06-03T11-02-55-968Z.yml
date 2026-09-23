@@ -1,0 +1,180 @@
+- generic [active]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo Sam Hox - secondEight" [ref=e7]:
+          - /url: https://www.secondeight.net
+          - img "logo" [ref=e8]
+          - text: Sam Hox - secondEight
+        - navigation [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link "Work" [ref=e12]:
+                - /url: https://www.secondeight.net/
+            - listitem [ref=e13]:
+              - link "About" [ref=e14]:
+                - /url: https://www.secondeight.net/about
+            - listitem [ref=e15]:
+              - link "Shop" [ref=e16]:
+                - /url: https://samhox.gumroad.com/
+            - listitem [ref=e17]:
+              - link "Let’s Talk" [ref=e18]:
+                - /url: https://www.secondeight.net/contact
+                - generic [ref=e19]: Let’s Talk
+    - generic [ref=e21]:
+      - generic [ref=e24]:
+        - heading "Radial Brand Design" [level=1] [ref=e29]:
+          - generic [ref=e30]:
+            - text: Radial
+            - text: Brand Design
+        - paragraph [ref=e35]:
+          - generic [ref=e36]: "Client: Radial"
+          - text: "Year: 2026"
+          - generic [ref=e37]: "Role: Brand Identity, Logo, Graphic System, Colour, UI/UX, Motion"
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - application "Video Player" [ref=e45]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e54]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e57]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e60]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e63]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e66]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e69]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e72]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e75]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e78]
+          - application "Video Player" [ref=e81]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e87]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e90]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e93]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e96]
+          - img "Radial AI platform brand identity design by Sam Hox — Second Eight Studio" [ref=e99]
+        - paragraph [ref=e104]:
+          - generic [ref=e105]: Radial is an AI startup building an orchestration platform for health and life sciences. The challenge was positioning a deeply technical product within a human, biological context without losing precision or credibility.
+          - generic [ref=e106]: The concept came from the logo, a radial mark of eight stems reading simultaneously as a neuron, a flower, and a system diagram. Seven signals follow the pattern. One finds what the others missed. That single line became the foundation for everything.
+          - generic [ref=e107]: Graphics are botanical structures annotated with machine vision data, sitting between scientific illustration and AI inference. The palette is pulled from nature. The UI follows Swiss editorial logic, structured and typographic through a dark terminal environment. Animation balances biological calm with live data underneath.
+          - text: The result is a brand that feels grown as much as designed. Precise where it needs to be. Organic where it matters.
+      - link "Interested in working together? Get in touch!" [ref=e116]:
+        - /url: https://www.secondeight.net/contact
+      - generic [ref=e121]:
+        - link "Prev Gray Matter Brand Identity" [ref=e122]:
+          - /url: https://www.secondeight.net/project/gray-matter
+          - generic [ref=e124]:
+            - generic [ref=e125]: Prev
+            - generic [ref=e126]: Gray Matter Brand Identity
+        - link "Next Cultiv Brand Identity" [ref=e127]:
+          - /url: https://www.secondeight.net/project/cultiv-brand-design
+          - generic [ref=e129]:
+            - generic [ref=e130]: Next
+            - generic [ref=e131]: Cultiv Brand Identity
+      - generic [ref=e133]:
+        - paragraph [ref=e136]: Other projects
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - link "Gray Matter Brand Identity":
+              - /url: https://www.secondeight.net/project/gray-matter
+              - img [ref=e139]
+            - paragraph [ref=e140]
+          - generic [ref=e141]:
+            - link "Radial Brand Identity":
+              - /url: https://www.secondeight.net/project/radial-brand-design
+              - img [ref=e142]
+            - paragraph [ref=e143]
+          - generic [ref=e144]:
+            - link "Cultiv Brand Identity":
+              - /url: https://www.secondeight.net/project/cultiv-brand-design
+              - img [ref=e145]
+            - paragraph [ref=e146]
+          - generic [ref=e147]:
+            - link "Form Brand Identity":
+              - /url: https://www.secondeight.net/project/form-brand-design
+              - img [ref=e148]
+            - paragraph [ref=e149]
+          - generic [ref=e150]:
+            - link "Bad Decisions Studio Brand Identity":
+              - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+              - img [ref=e151]
+            - paragraph [ref=e152]
+          - generic [ref=e153]:
+            - link "Aevum AI Brand Identity":
+              - /url: https://www.secondeight.net/project/aveum-brand-design
+              - img [ref=e154]
+            - paragraph [ref=e155]
+          - generic [ref=e156]:
+            - link "Sequence Brand Identity":
+              - /url: https://www.secondeight.net/project/sequence-brand-design
+              - img [ref=e157]
+            - paragraph [ref=e158]
+          - generic [ref=e159]:
+            - link "Cellbased Brand Identity":
+              - /url: https://www.secondeight.net/project/cellbased-brand-design
+              - img [ref=e160]
+            - paragraph [ref=e161]
+          - generic [ref=e162]:
+            - link "Augury Brand Identity":
+              - /url: https://www.secondeight.net/project/augury-brand-design
+              - img [ref=e163]
+            - paragraph [ref=e164]
+          - generic [ref=e165]:
+            - link "Receur Brand Identity":
+              - /url: https://www.secondeight.net/project/receur-brand-design
+              - img [ref=e166]
+            - paragraph [ref=e167]
+          - generic [ref=e168]:
+            - link "Plasma Brand Identity":
+              - /url: https://www.secondeight.net/project/plasma-brand-design
+              - img [ref=e169]
+            - paragraph [ref=e170]
+          - generic [ref=e171]:
+            - link "Neurona Brand Identity":
+              - /url: https://www.secondeight.net/project/neurona-brand-design
+              - img [ref=e172]
+            - paragraph [ref=e173]
+          - generic [ref=e174]:
+            - link "Nodelink Brand Identity":
+              - /url: https://www.secondeight.net/project/nodelink-brand-design
+              - img [ref=e175]
+            - paragraph [ref=e176]
+          - generic [ref=e177]:
+            - link "Revival Brand Identity":
+              - /url: https://www.secondeight.net/project/revival-brand-design
+              - img [ref=e178]
+            - paragraph [ref=e179]
+          - generic [ref=e180]:
+            - link "Klue Brand Identity":
+              - /url: https://www.secondeight.net/project/klue
+              - img [ref=e181]
+            - paragraph [ref=e182]
+          - generic [ref=e183]:
+            - link "Zeonite Brand Identity":
+              - /url: https://www.secondeight.net/project/zeonite-brand-design
+              - img [ref=e184]
+            - paragraph [ref=e185]
+          - generic [ref=e186]:
+            - link "Beyond Surgical Brand Identity":
+              - /url: https://www.secondeight.net/project/beyond-surgical-brand-design
+              - img [ref=e187]
+            - paragraph [ref=e188]
+          - generic [ref=e189]:
+            - link "Blame Brand Identity":
+              - /url: https://www.secondeight.net/project/blame-brand-design
+              - img [ref=e190]
+            - paragraph [ref=e191]
+          - generic [ref=e192]:
+            - link "Kinetica Brand Identity":
+              - /url: https://www.secondeight.net/project/kinetica-brand-design
+              - img [ref=e193]
+            - paragraph [ref=e194]
+      - generic [ref=e197]:
+        - paragraph [ref=e202]: © Sam Hox 2026
+        - paragraph [ref=e207]:
+          - generic [ref=e208]:
+            - link "Instagram" [ref=e209]:
+              - /url: https://www.instagram.com/eight.seconds/
+            - link "X" [ref=e210]:
+              - /url: https://x.com/secondeight_
+            - link "Linkedin" [ref=e211]:
+              - /url: https://www.linkedin.com/in/secondeight/
+            - link "Threads" [ref=e212]:
+              - /url: https://www.threads.net/@eight.seconds
+  - generic: "1.252"

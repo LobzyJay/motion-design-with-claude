@@ -1,0 +1,179 @@
+- generic [active]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo Sam Hox - secondEight" [ref=e7]:
+          - /url: https://www.secondeight.net
+          - img "logo" [ref=e8]
+          - text: Sam Hox - secondEight
+        - navigation [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link "Work" [ref=e12]:
+                - /url: https://www.secondeight.net/
+            - listitem [ref=e13]:
+              - link "About" [ref=e14]:
+                - /url: https://www.secondeight.net/about
+            - listitem [ref=e15]:
+              - link "Shop" [ref=e16]:
+                - /url: https://samhox.gumroad.com/
+            - listitem [ref=e17]:
+              - link "Let’s Talk" [ref=e18]:
+                - /url: https://www.secondeight.net/contact
+                - generic [ref=e19]: Let’s Talk
+    - generic [ref=e21]:
+      - generic [ref=e23]:
+        - heading "Crafting Memorable Experiences ®" [level=1] [ref=e206]
+        - heading "I build brand identities for the companies reshaping science, health and technology." [level=5] [ref=e35]:
+          - generic [ref=e36]:
+            - text: I build brand identities for the companies reshaping science,
+            - text: health and technology.
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - link "Gray Matter Brand Identity" [ref=e47]:
+            - /url: https://www.secondeight.net/project/gray-matter
+            - img "Gray Matter Brand Identity" [ref=e50]
+          - link "Gray Matter Brand Identity" [ref=e51]:
+            - /url: https://www.secondeight.net/project/gray-matter
+            - generic [ref=e52]: Gray Matter Brand Identity
+        - generic [ref=e53]:
+          - link "Radial Brand Identity" [ref=e54]:
+            - /url: https://www.secondeight.net/project/radial-brand-design
+            - img "Radial Brand Identity" [ref=e57]
+          - link "Radial Brand Identity" [ref=e58]:
+            - /url: https://www.secondeight.net/project/radial-brand-design
+            - generic [ref=e59]: Radial Brand Identity
+        - generic [ref=e60]:
+          - link "Cultiv Brand Identity" [ref=e61]:
+            - /url: https://www.secondeight.net/project/cultiv-brand-design
+            - img "Cultiv Brand Identity" [ref=e64]
+          - link "Cultiv Brand Identity" [ref=e65]:
+            - /url: https://www.secondeight.net/project/cultiv-brand-design
+            - generic [ref=e66]: Cultiv Brand Identity
+        - generic [ref=e67]:
+          - link "Form Brand Identity" [ref=e68]:
+            - /url: https://www.secondeight.net/project/form-brand-design
+            - img "Form Brand Identity" [ref=e71]
+          - link "Form Brand Identity" [ref=e72]:
+            - /url: https://www.secondeight.net/project/form-brand-design
+            - generic [ref=e73]: Form Brand Identity
+        - generic [ref=e74]:
+          - link "Bad Decisions Studio Brand Identity" [ref=e75]:
+            - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+            - img "Bad Decisions Studio Brand Identity" [ref=e78]
+          - link "Bad Decisions Studio Brand Identity" [ref=e79]:
+            - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+            - generic [ref=e80]: Bad Decisions Studio Brand Identity
+        - generic [ref=e81]:
+          - link "Aevum AI Brand Identity" [ref=e82]:
+            - /url: https://www.secondeight.net/project/aveum-brand-design
+            - img "Aevum AI Brand Identity" [ref=e85]
+          - link "Aevum AI Brand Identity" [ref=e86]:
+            - /url: https://www.secondeight.net/project/aveum-brand-design
+            - generic [ref=e87]: Aevum AI Brand Identity
+        - generic [ref=e88]:
+          - link "Sequence Brand Identity" [ref=e89]:
+            - /url: https://www.secondeight.net/project/sequence-brand-design
+            - img "Sequence Brand Identity" [ref=e92]
+          - link "Sequence Brand Identity" [ref=e93]:
+            - /url: https://www.secondeight.net/project/sequence-brand-design
+            - generic [ref=e94]: Sequence Brand Identity
+        - generic [ref=e95]:
+          - link "Cellbased Brand Identity" [ref=e96]:
+            - /url: https://www.secondeight.net/project/cellbased-brand-design
+            - img "Cellbased Brand Identity" [ref=e99]
+          - link "Cellbased Brand Identity" [ref=e100]:
+            - /url: https://www.secondeight.net/project/cellbased-brand-design
+            - generic [ref=e101]: Cellbased Brand Identity
+        - generic [ref=e102]:
+          - link "Augury Brand Identity" [ref=e103]:
+            - /url: https://www.secondeight.net/project/augury-brand-design
+            - img "Augury Brand Identity" [ref=e106]
+          - link "Augury Brand Identity" [ref=e107]:
+            - /url: https://www.secondeight.net/project/augury-brand-design
+            - generic [ref=e108]: Augury Brand Identity
+        - generic [ref=e109]:
+          - link "Receur Brand Identity" [ref=e110]:
+            - /url: https://www.secondeight.net/project/receur-brand-design
+            - img "Receur Brand Identity" [ref=e113]
+          - link "Receur Brand Identity" [ref=e114]:
+            - /url: https://www.secondeight.net/project/receur-brand-design
+            - generic [ref=e115]: Receur Brand Identity
+        - generic [ref=e116]:
+          - link "Plasma Brand Identity" [ref=e117]:
+            - /url: https://www.secondeight.net/project/plasma-brand-design
+            - img "Plasma Brand Identity" [ref=e120]
+          - link "Plasma Brand Identity" [ref=e121]:
+            - /url: https://www.secondeight.net/project/plasma-brand-design
+            - generic [ref=e122]: Plasma Brand Identity
+        - generic [ref=e123]:
+          - link "Neurona Brand Identity" [ref=e124]:
+            - /url: https://www.secondeight.net/project/neurona-brand-design
+            - img "Neurona Brand Identity" [ref=e127]
+          - link "Neurona Brand Identity" [ref=e128]:
+            - /url: https://www.secondeight.net/project/neurona-brand-design
+            - generic [ref=e129]: Neurona Brand Identity
+        - generic [ref=e130]:
+          - link "Nodelink Brand Identity" [ref=e131]:
+            - /url: https://www.secondeight.net/project/nodelink-brand-design
+            - img "Nodelink Brand Identity" [ref=e134]
+          - link "Nodelink Brand Identity" [ref=e135]:
+            - /url: https://www.secondeight.net/project/nodelink-brand-design
+            - generic [ref=e136]: Nodelink Brand Identity
+        - generic [ref=e137]:
+          - link "Revival Brand Identity" [ref=e138]:
+            - /url: https://www.secondeight.net/project/revival-brand-design
+            - img "Revival Brand Identity" [ref=e141]
+          - link "Revival Brand Identity" [ref=e142]:
+            - /url: https://www.secondeight.net/project/revival-brand-design
+            - generic [ref=e143]: Revival Brand Identity
+        - generic [ref=e144]:
+          - link "Klue Brand Identity" [ref=e145]:
+            - /url: https://www.secondeight.net/project/klue
+            - img "Klue Brand Identity" [ref=e148]
+          - link "Klue Brand Identity" [ref=e149]:
+            - /url: https://www.secondeight.net/project/klue
+            - generic [ref=e150]: Klue Brand Identity
+        - generic [ref=e151]:
+          - link "Zeonite Brand Identity" [ref=e152]:
+            - /url: https://www.secondeight.net/project/zeonite-brand-design
+            - img "Zeonite Brand Identity" [ref=e155]
+          - link "Zeonite Brand Identity" [ref=e156]:
+            - /url: https://www.secondeight.net/project/zeonite-brand-design
+            - generic [ref=e157]: Zeonite Brand Identity
+        - generic [ref=e158]:
+          - link "Beyond Surgical Brand Identity" [ref=e159]:
+            - /url: https://www.secondeight.net/project/beyond-surgical-brand-design
+            - img "Beyond Surgical Brand Identity" [ref=e162]
+          - link "Beyond Surgical Brand Identity" [ref=e163]:
+            - /url: https://www.secondeight.net/project/beyond-surgical-brand-design
+            - generic [ref=e164]: Beyond Surgical Brand Identity
+        - generic [ref=e165]:
+          - link "Blame Brand Identity" [ref=e166]:
+            - /url: https://www.secondeight.net/project/blame-brand-design
+            - img "Blame Brand Identity" [ref=e169]
+          - link "Blame Brand Identity" [ref=e170]:
+            - /url: https://www.secondeight.net/project/blame-brand-design
+            - generic [ref=e171]: Blame Brand Identity
+        - generic [ref=e172]:
+          - link "Kinetica Brand Identity" [ref=e173]:
+            - /url: https://www.secondeight.net/project/kinetica-brand-design
+            - img "Kinetica Brand Identity" [ref=e176]
+          - link "Kinetica Brand Identity" [ref=e177]:
+            - /url: https://www.secondeight.net/project/kinetica-brand-design
+            - generic [ref=e178]: Kinetica Brand Identity
+      - link "Interested in working together? Get in touch!" [ref=e187]:
+        - /url: https://www.secondeight.net/contact
+      - generic [ref=e190]:
+        - paragraph [ref=e195]: © Sam Hox 2026
+        - paragraph [ref=e200]:
+          - generic [ref=e201]:
+            - link "Instagram" [ref=e202]:
+              - /url: https://www.instagram.com/eight.seconds/
+            - link "X" [ref=e203]:
+              - /url: https://x.com/secondeight_
+            - link "Linkedin" [ref=e204]:
+              - /url: https://www.linkedin.com/in/secondeight/
+            - link "Threads" [ref=e205]:
+              - /url: https://www.threads.net/@eight.seconds
+  - generic: "1.252"

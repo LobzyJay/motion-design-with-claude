@@ -9,6 +9,16 @@
       "type": "sse",
       "url": "http://localhost:9876/sse",
       "description": "Official Blender Lab MCP. Requires the add-on enabled in Blender and Start MCP Server clicked."
+    },
+    "HiggsfieldBridge": {
+      "type": "http",
+      "url": "https://bridge.higgsfield.ai/mcp",
+      "description": "Optional. Higgsfield Bridge into the Blender add-on (Blender 5.1+) and the AE plugin (AE 2024+). Requires the plugin installed and signed in. Authenticate with /mcp. Spends Higgsfield credits."
+    },
+    "Higgsfield": {
+      "type": "http",
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "description": "Optional. Higgsfield generation MCP for standalone images and video outside Blender or AE. Spends Higgsfield credits."
     }
   }
 }

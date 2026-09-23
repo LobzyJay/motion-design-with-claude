@@ -1,6 +1,6 @@
 # motion-design-with-claude
 
-Claude Code skills for motion designers working in Blender and After Effects.
+Agent skills for motion designers working in Blender and After Effects. Built for Claude Code, and they run the same way under GPT-6 Astra in Codex.
 
 Think of it as handing Claude the years of taste and tool knowledge you'd otherwise have to re-explain every single session. You set it up once, and from then on Claude already knows the difference between ease-in and ease-out, why everything animating at once looks cheap, and how to actually drive your tools.
 
@@ -113,21 +113,87 @@ Run the foundation check below (works for everyone). Run the AE check only if yo
 2. In Claude Code: `"Use the blender-motion skill. Connect to Blender MCP and tell me what objects are in my current scene."`
 3. Expected: Claude returns the object list.
 
+**Higgsfield in Blender sanity check:**
+1. Open Blender with the Higgsfield bar signed in and the Blender MCP running.
+2. In Claude Code: `"Use the blender-motion skill. Blockout a product plinth with two softbox stands using Higgsfield, then list what it added."`
+3. Expected: Claude tells you what it's about to generate and asks before spending credits. After your yes, the blockout lands in the scene and Claude lists the new objects, collected into `HF_Blockout`.
+
+**Higgsfield in AE sanity check:**
+1. Open AE with the Higgsfield panel signed in and a comp with a footage layer.
+2. In Claude Code: `"Use the aftereffects-motion skill. Remove the background on the top footage layer with Higgsfield."`
+3. Expected: Claude names the layer, asks before spending credits, runs it, then reports the new layers it found.
+
 **Foundation sanity check:**
 `"Use the motion-design skill. Review my timing: I have a logo reveal where everything animates simultaneously over 300ms with linear easing."`
 Expected: Claude names exactly what's wrong and gives specific fixes.
 
 ---
 
+## Running with GPT-6 Astra (Codex CLI)
+
+Same skills, same MCPs, different driver. Codex reads `SKILL.md` skills natively, and this repo ships an `AGENTS.md` and a `.agents/skills` link so Astra picks everything up when you launch Codex inside the repo.
+
+### Step A: Set Astra as the model
+
+Install Codex CLI and sign in with your ChatGPT account. Then add to `~/.codex/config.toml`:
+
+```toml
+model = "gpt-6-astra"
+model_reasoning_effort = "high"
+```
+
+Use `xhigh` for long multi-step builds. The full example with every MCP is in `codex-config.toml.example`.
+
+### Step B: Register the MCPs
+
+Do Steps 2 to 5 above for the tool-side installs (AE bridge script, Blender add-ons, Higgsfield plugins). Then register with Codex instead of Claude Code:
+
+```bash
+codex mcp add AfterEffectsMCP -- node "$(pwd)/after-effects-mcp/build/index.js"
+```
+
+```bash
+codex mcp add BlenderMCP -- npx -y mcp-remote http://localhost:9876/sse
+```
+
+```bash
+codex mcp add HiggsfieldBridge --url https://bridge.higgsfield.ai/mcp
+```
+
+```bash
+codex mcp login HiggsfieldBridge
+```
+
+Verify: `codex mcp list` should show all three.
+
+The Blender MCP serves SSE, so `mcp-remote` bridges it for Codex. Needs Node installed.
+
+### Step C: Skills
+
+Launch Codex from inside this repo and the skills load from `.agents/skills`. To use them in any folder:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -r skills/* ~/.agents/skills/
+```
+
+### Step D: Sanity checks
+
+Run the same prompts from Step 7 in Codex. The skills say "Claude"; Astra reads that as itself. `AGENTS.md` tells it so.
+
+**ChatGPT desktop instead of Codex:** the Higgsfield plugin for ChatGPT has a `/use-after-effects` command that drives AE directly. It doesn't load these skills, so you lose the timing and easing rules. Codex is the better route.
+
+---
+
 ## .mcp.json
 
-See `.mcp.json.example` for the full config. Copy it to `.mcp.json` and adjust paths for your machine.
+See `.mcp.json.example` for the full Claude Code config and `codex-config.toml.example` for Codex. Copy the one you need and adjust paths for your machine.
 
 ---
 
 ## Who it's for
 
-Working motion designers who want a collaborator, not a tutorial bot that explains what a keyframe is for the hundredth time. You already know anticipation and follow-through. You already know ease-in from ease-out. You just want Claude to know it too, so you can skip the small talk and get to the good part. If that's you, you're home.
+Senior motion designers who want an agent as a working collaborator, not a tutorial bot. You know what anticipation and follow-through are. You know the difference between ease-in and ease-out. You want your agent to know that too, without you explaining it every session.
 
 ---
 
@@ -156,12 +222,19 @@ Something acting up? Don't panic, it's almost always one of these.
 - Confirm `claude mcp list` shows `BlenderMCP`.
 - Confirm Blender's console shows "MCP Server running on localhost:9876".
 
+**Higgsfield Bridge not responding:**
+- Confirm `claude mcp list` (or `codex mcp list`) shows `HiggsfieldBridge`.
+- Re-authenticate: `/mcp` in Claude Code, `codex mcp login HiggsfieldBridge` in Codex.
+- In Blender: sign in on the floating Higgsfield bar. Blender must be 5.1 or newer.
+- In AE: Window > Extensions > Higgsfield AI, signed in, panel open. AE must be 2024 or newer.
+- Generation stops partway: check your credit balance.
+
 **Script throws an error in AE:**
-- Screenshot the error and paste it into Claude Code. It will patch.
+- Screenshot the error and paste it in. The agent will patch.
 - AE's Undo can't reliably undo script operations. If something went wrong, use your most recent save.
 
 **Render looks wrong in Blender:**
-- Use the `motion-design-critique` skill. Drop a screenshot and describe what's wrong. Claude will diagnose.
+- Use the `motion-design-critique` skill. Drop a screenshot and describe what's wrong. The agent will diagnose.
 
 ---
 

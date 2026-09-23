@@ -1,0 +1,185 @@
+- generic [active]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo Sam Hox - secondEight" [ref=e7]:
+          - /url: https://www.secondeight.net
+          - img "logo" [ref=e8]
+          - text: Sam Hox - secondEight
+        - navigation [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link "Work" [ref=e12]:
+                - /url: https://www.secondeight.net/
+            - listitem [ref=e13]:
+              - link "About" [ref=e14]:
+                - /url: https://www.secondeight.net/about
+            - listitem [ref=e15]:
+              - link "Shop" [ref=e16]:
+                - /url: https://samhox.gumroad.com/
+            - listitem [ref=e17]:
+              - link "Let’s Talk" [ref=e18]:
+                - /url: https://www.secondeight.net/contact
+                - generic [ref=e19]: Let’s Talk
+    - generic [ref=e21]:
+      - generic [ref=e24]:
+        - heading "Form Brand Design" [level=1] [ref=e29]:
+          - generic [ref=e30]:
+            - text: Form
+            - text: Brand Design
+        - paragraph [ref=e35]:
+          - generic [ref=e36]: "Client: Form"
+          - text: "Year: 2026"
+          - generic [ref=e37]: "Role: Brand Identity, Logo Design, Graphic System, Icons, Imagery, Motion, UI/UX"
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - application "Video Player" [ref=e45]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e54]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e57]
+          - application "Video Player" [ref=e60]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e66]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e69]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e72]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e75]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e78]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e81]
+          - application "Video Player" [ref=e84]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e90]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e93]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e96]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e99]
+          - application "Video Player" [ref=e102]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e111]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e114]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e117]
+          - img "Form brand identity design by Sam Hox — Second Eight Studio" [ref=e120]
+        - paragraph [ref=e125]:
+          - generic [ref=e126]: FORM is an AI-powered creative system that turns unstructured inputs into clarity.
+          - generic [ref=e127]: Its identity embodies the duality of human and machine, one smooth and organic, the other pixelated and digital. The dual-eye logo captures this vision, symbolizing creativity and computation merging into one.
+          - generic [ref=e128]: Graphics are built from people, artworks, avatars, and fragments recomposed into immersive compositions. Pixels scatter and reform, merging precision with artistic flow. Icons function as abstract glyphs, inspired by ancient symbols yet reframed as pixel modules representing different parameters of FORM's identity.
+          - generic [ref=e129]: Layouts follow abstract grids with a clean editorial touch, balancing artistic expression with technological clarity. Imagery is reframed through frames and pixelation, bold in color and expressive in tone, reinforcing FORM's cultural and computational duality.
+          - text: The result is a living, adaptive identity, an instrument that reframes culture into clarity.
+      - link "Interested in working together? Get in touch!" [ref=e138]:
+        - /url: https://www.secondeight.net/contact
+      - generic [ref=e143]:
+        - link "Prev Cultiv Brand Identity" [ref=e144]:
+          - /url: https://www.secondeight.net/project/cultiv-brand-design
+          - generic [ref=e146]:
+            - generic [ref=e147]: Prev
+            - generic [ref=e148]: Cultiv Brand Identity
+        - link "Next Bad Decisions Studio Brand Identity" [ref=e149]:
+          - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+          - generic [ref=e151]:
+            - generic [ref=e152]: Next
+            - generic [ref=e153]: Bad Decisions Studio Brand Identity
+      - generic [ref=e155]:
+        - paragraph [ref=e158]: Other projects
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - link "Gray Matter Brand Identity":
+              - /url: https://www.secondeight.net/project/gray-matter
+              - img [ref=e161]
+            - paragraph [ref=e162]
+          - generic [ref=e163]:
+            - link "Radial Brand Identity":
+              - /url: https://www.secondeight.net/project/radial-brand-design
+              - img [ref=e164]
+            - paragraph [ref=e165]
+          - generic [ref=e166]:
+            - link "Cultiv Brand Identity":
+              - /url: https://www.secondeight.net/project/cultiv-brand-design
+              - img [ref=e167]
+            - paragraph [ref=e168]
+          - generic [ref=e169]:
+            - link "Form Brand Identity":
+              - /url: https://www.secondeight.net/project/form-brand-design
+              - img [ref=e170]
+            - paragraph [ref=e171]
+          - generic [ref=e172]:
+            - link "Bad Decisions Studio Brand Identity":
+              - /url: https://www.secondeight.net/project/bad-decisions-studio-brand-design
+              - img [ref=e173]
+            - paragraph [ref=e174]
+          - generic [ref=e175]:
+            - link "Aevum AI Brand Identity":
+              - /url: https://www.secondeight.net/project/aveum-brand-design
+              - img [ref=e176]
+            - paragraph [ref=e177]
+          - generic [ref=e178]:
+            - link "Sequence Brand Identity":
+              - /url: https://www.secondeight.net/project/sequence-brand-design
+              - img [ref=e179]
+            - paragraph [ref=e180]
+          - generic [ref=e181]:
+            - link "Cellbased Brand Identity":
+              - /url: https://www.secondeight.net/project/cellbased-brand-design
+              - img [ref=e182]
+            - paragraph [ref=e183]
+          - generic [ref=e184]:
+            - link "Augury Brand Identity":
+              - /url: https://www.secondeight.net/project/augury-brand-design
+              - img [ref=e185]
+            - paragraph [ref=e186]
+          - generic [ref=e187]:
+            - link "Receur Brand Identity":
+              - /url: https://www.secondeight.net/project/receur-brand-design
+              - img [ref=e188]
+            - paragraph [ref=e189]
+          - generic [ref=e190]:
+            - link "Plasma Brand Identity":
+              - /url: https://www.secondeight.net/project/plasma-brand-design
+              - img [ref=e191]
+            - paragraph [ref=e192]
+          - generic [ref=e193]:
+            - link "Neurona Brand Identity":
+              - /url: https://www.secondeight.net/project/neurona-brand-design
+              - img [ref=e194]
+            - paragraph [ref=e195]
+          - generic [ref=e196]:
+            - link "Nodelink Brand Identity":
+              - /url: https://www.secondeight.net/project/nodelink-brand-design
+              - img [ref=e197]
+            - paragraph [ref=e198]
+          - generic [ref=e199]:
+            - link "Revival Brand Identity":
+              - /url: https://www.secondeight.net/project/revival-brand-design
+              - img [ref=e200]
+            - paragraph [ref=e201]
+          - generic [ref=e202]:
+            - link "Klue Brand Identity":
+              - /url: https://www.secondeight.net/project/klue
+              - img [ref=e203]
+            - paragraph [ref=e204]
+          - generic [ref=e205]:
+            - link "Zeonite Brand Identity":
+              - /url: https://www.secondeight.net/project/zeonite-brand-design
+              - img [ref=e206]
+            - paragraph [ref=e207]
+          - generic [ref=e208]:
+            - link "Beyond Surgical Brand Identity":
+              - /url: https://www.secondeight.net/project/beyond-surgical-brand-design
+              - img [ref=e209]
+            - paragraph [ref=e210]
+          - generic [ref=e211]:
+            - link "Blame Brand Identity":
+              - /url: https://www.secondeight.net/project/blame-brand-design
+              - img [ref=e212]
+            - paragraph [ref=e213]
+          - generic [ref=e214]:
+            - link "Kinetica Brand Identity":
+              - /url: https://www.secondeight.net/project/kinetica-brand-design
+              - img [ref=e215]
+            - paragraph [ref=e216]
+      - generic [ref=e219]:
+        - paragraph [ref=e224]: © Sam Hox 2026
+        - paragraph [ref=e229]:
+          - generic [ref=e230]:
+            - link "Instagram" [ref=e231]:
+              - /url: https://www.instagram.com/eight.seconds/
+            - link "X" [ref=e232]:
+              - /url: https://x.com/secondeight_
+            - link "Linkedin" [ref=e233]:
+              - /url: https://www.linkedin.com/in/secondeight/
+            - link "Threads" [ref=e234]:
+              - /url: https://www.threads.net/@eight.seconds
+  - generic: "1.252"

@@ -2,3 +2,9 @@
 _canon-source-material/
 CLAUDE-CODE-HANDOFF.md
 PRD-motion-design-plugin.md
+
+# slideshow build assets (heavy)
+slideshow/renders/
+slideshow/exports/
+slideshow/network.blend
+slideshow/network.blend1

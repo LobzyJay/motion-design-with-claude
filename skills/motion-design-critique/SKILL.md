@@ -51,3 +51,4 @@ Name the problem. Name the location. Give the value. Give the fix.
 | Motion looks robotic, default, or unconvincing | `references/visual-diagnostics.md` |
 | AE script error, expression error, MCP not responding | `references/ae-diagnostics.md` |
 | Blender bpy error, render artifact, material wrong, MCP issue | `references/blender-diagnostics.md` |
+| Higgsfield Bridge not responding, generated asset wrong | Higgsfield section of `ae-diagnostics.md` or `blender-diagnostics.md` |
