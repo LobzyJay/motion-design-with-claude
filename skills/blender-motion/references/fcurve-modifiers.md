@@ -56,9 +56,9 @@ kps.update()
 mod = add_modifier(fc, 'CYCLES')
 mod.mode_before = 'REPEAT'
 mod.mode_after = 'REPEAT'
-# 'REPEAT' — exact loop
-# 'REPEAT_OFFSET' — repeats but offsets each cycle by end-minus-start delta
-# 'MIRROR' — ping-pong
+# 'REPEAT', exact loop
+# 'REPEAT_OFFSET', repeats but offsets each cycle by end-minus-start delta
+# 'MIRROR', ping-pong
 ```
 
 ---

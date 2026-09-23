@@ -98,7 +98,7 @@ Key nodes:
 - **Separate XYZ** (get Z)
 - **Math: Greater Than** (Z > threshold)
 - **Delete Geometry** (delete faces where result = 0)
-- OR: **Set Material** (switch material based on the mask — keeps geometry, changes appearance)
+- OR: **Set Material** (switch material based on the mask, keeps geometry, changes appearance)
 
 Animate the `threshold` value (exposed as a modifier input, keyframed) from the minimum Z of the mesh to the maximum Z over the desired reveal duration.
 

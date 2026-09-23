@@ -81,9 +81,9 @@ If none of the above fit, the motion has not been scoped clearly enough. Get a c
 | Mood | Description |
 |---|---|
 | Snap | Near-linear with very fast peak velocity, tight settle at end |
-| Bounce settle | Ease-out, slight overshoot, settle — better done with inertial expression in AE; explicit keyframes in bpy |
-| Heavy drag | Slow, weighted entrance — very shallow start, steep middle, near-flat end |
-| Elastic | Overshoot in both directions before settling — use expressions in AE; F-curve modifier in bpy |
+| Bounce settle | Ease-out, slight overshoot, settle, better done with inertial expression in AE; explicit keyframes in bpy |
+| Heavy drag | Slow, weighted entrance, very shallow start, steep middle, near-flat end |
+| Elastic | Overshoot in both directions before settling, use expressions in AE; F-curve modifier in bpy |
 
 ---
 
@@ -107,8 +107,8 @@ If none of the above fit, the motion has not been scoped clearly enough. Get a c
 
 | What you see | What it means | Fix |
 |---|---|---|
-| Linear entrance or exit | Default — no decision made | Ease-out on entrance, ease-in on exit |
+| Linear entrance or exit | Default, no decision made | Ease-out on entrance, ease-in on exit |
 | Ease-in-out on an entrance | Floaty start, element isn't clearly arriving | Switch to ease-out |
 | Everything the same easing | Easing was applied globally, not per-element | Per-element easing based on function |
 | Fast ease-out overshoot that doesn't settle | Overshoot without decay | Add follow-through keyframe or inertial expression |
-| Perfectly symmetric bounce | Keyframe ping-pong, not physics | Decay the bounce — each cycle should be shorter than the last |
+| Perfectly symmetric bounce | Keyframe ping-pong, not physics | Decay the bounce, each cycle should be shorter than the last |

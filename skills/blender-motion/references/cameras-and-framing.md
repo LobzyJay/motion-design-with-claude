@@ -138,4 +138,4 @@ For animated reveals: start framing slightly tighter (subject at 70%) and pull o
 | Orthographic but still looks perspective | `cam_data.type = 'ORTHO'` (not 'PERSP') |
 | Clipping: objects disappear close to camera | `cam_data.clip_start = 0.01`, `cam_data.clip_end = 1000` |
 | Resolution still at viewport preview size | Set `render.resolution_x` and `render.resolution_y` explicitly |
-| Camera pointing wrong direction | Check `rotation_euler` — in Blender, camera looks in -Z by default; rotation applies from there |
+| Camera pointing wrong direction | Check `rotation_euler`, in Blender, camera looks in -Z by default; rotation applies from there |

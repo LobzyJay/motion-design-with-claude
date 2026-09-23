@@ -1,6 +1,8 @@
 # Style Guide
 
-Voice and formatting rules for all skill content in this repo. Read before writing or editing any SKILL.md or reference file. These are not preferences.
+Voice and formatting rules for **skill content**: every SKILL.md and reference file. This is the voice Claude uses while it works, so it stays tight and professional. Read this before writing or editing any SKILL.md or reference file. These are not preferences.
+
+**This guide does not govern the human-facing docs** (README, CONTRIBUTING). Those are read by people deciding whether to use the project, so they get a warmer, more casual voice with some personality. Keep the hard bans below everywhere though: no em dashes, no corporate filler, no AI-tell phrasing. Friendly is fine; fake is not.
 
 ---
 
@@ -57,7 +59,7 @@ If a reference exceeds 600 lines, split it into two focused files.
 
 **Code blocks for all code.** Every script, bpy snippet, expression, or shell command goes in a fenced code block with the language tag.
 
-**Tables for mappings.** UI name vs ExtendScript name, situation vs reference, user phrase vs Claude action — all tables.
+**Tables for mappings.** UI name vs ExtendScript name, situation vs reference, user phrase vs Claude action: all tables.
 
 **No nested headers past `###`.** Three levels is enough. If you need a fourth level, the content needs restructuring.
 

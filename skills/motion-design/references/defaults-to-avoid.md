@@ -10,7 +10,7 @@ The tells that mark motion as auto-generated or unconsidered. Name them when you
 
 **Why it's wrong:** Nothing in the physical world moves linearly. Linear motion reads as mechanical or digital in a way that breaks immersion in brand and product motion.
 
-**Fix:** Ease-out for entrances. Ease-in for exits. Custom bezier for specific moods. Reserve linear for countdowns and machines — things that are supposed to feel mechanical.
+**Fix:** Ease-out for entrances. Ease-in for exits. Custom bezier for specific moods. Reserve linear for countdowns and machines, things that are supposed to feel mechanical.
 
 ---
 
@@ -26,7 +26,7 @@ The tells that mark motion as auto-generated or unconsidered. Name them when you
 
 ## Equal-duration everything
 
-**What it looks like:** Every animation in the comp is 300ms (or 250ms, or 400ms — pick a number). A logo reveal, a text fade, and a background element all take the same amount of time.
+**What it looks like:** Every animation in the comp is 300ms (or 250ms, or 400ms, pick a number). A logo reveal, a text fade, and a background element all take the same amount of time.
 
 **Why it's wrong:** Duration encodes weight. When every element has the same duration, no element has more weight than any other. The motion has no hierarchy.
 
@@ -68,7 +68,7 @@ The tells that mark motion as auto-generated or unconsidered. Name them when you
 
 **What it looks like:** An element bounces with equal height on each bounce. The animation loops perfectly.
 
-**Why it's wrong:** This is a ping-pong between two keyframes. Physical bounces decay — each bounce is smaller than the last. A symmetric bounce reads as a toggle, not physics.
+**Why it's wrong:** This is a ping-pong between two keyframes. Physical bounces decay, each bounce is smaller than the last. A symmetric bounce reads as a toggle, not physics.
 
 **Fix:** Add decay. Each cycle should be shorter in both duration and amplitude. If you want a loop, use a looping expression on a decaying pattern, not a keyframe ping-pong.
 
@@ -88,7 +88,7 @@ The tells that mark motion as auto-generated or unconsidered. Name them when you
 
 **What it looks like:** Comp duration is 2s and the animation roughly fills it end-to-end because that was the comp length. Or everything is 2s because AE's default layer duration is 2 seconds.
 
-**Why it's wrong:** Duration should come from the brief, the platform, and the motion's physical metaphor — not from AE's default layer length.
+**Why it's wrong:** Duration should come from the brief, the platform, and the motion's physical metaphor, not from AE's default layer length.
 
 **Fix:** Set comp duration based on what the motion needs. Edit layer in-points and out-points intentionally. Never let a default duration make a timing decision.
 

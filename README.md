@@ -2,40 +2,51 @@
 
 Agent skills for motion designers working in Blender and After Effects. Built for Claude Code, and they run the same way under GPT-6 Astra in Codex.
 
-**Install time: under 15 minutes.** After that, your agent knows motion design principles, After Effects scripting patterns, and Blender's bpy API, without you re-explaining any of it.
+Think of it as handing Claude the years of taste and tool knowledge you'd otherwise have to re-explain every single session. You set it up once, and from then on Claude already knows the difference between ease-in and ease-out, why everything animating at once looks cheap, and how to actually drive your tools.
+
+**Install time: under 15 minutes.** Grab a coffee, you probably won't finish it before you're done.
 
 ---
 
 ## What it is
 
-Four skills that give your agent the taste and tool knowledge to work alongside a senior motion designer:
+Four skills that turn Claude into a collaborator who already gets it. Here's the crew:
 
 - **`motion-design`**: foundation. 12 principles, easing taxonomy, timing and spacing, composition for motion, defaults to steer away from. Tool-agnostic. Loads when motion is the subject.
-- **`aftereffects-motion`**: AE specialist. Three-mode workflow (live MCP, JSX scripts, Higgsfield Bridge), ExtendScript patterns, expressions, effects catalog. Loads when AE is named or implied.
-- **`blender-motion`**: Blender specialist. bpy keyframing, materials, lighting, cameras, F-curve modifiers, drivers, geometry nodes, render setup, Higgsfield blockouts. Loads when Blender is named or implied.
+- **`aftereffects-motion`**: AE specialist. Two-mode workflow (live MCP vs JSX scripts), ExtendScript patterns, expressions, effects catalog. Loads when AE is named or implied.
+- **`blender-motion`**: Blender specialist. bpy keyframing, materials, lighting, cameras, F-curve modifiers, drivers, geometry nodes, render setup. Loads when Blender is named or implied.
 - **`motion-design-critique`**: QA and diagnostics. Loads when something looks wrong, a script throws an error, or a render isn't what it should be.
 
-MCP servers wire the agent directly into your tools:
+Two MCP servers wire Claude directly into your tools:
 - **After Effects MCP** (`TheLlamainator/after-effects-mcp`): live commands into AE and a JSX bridge.
 - **Blender MCP** (official Blender Lab MCP, `projects.blender.org/lab/blender_mcp`): Python commands into a running Blender session.
-- **Higgsfield Bridge** (optional, `bridge.higgsfield.ai/mcp`): drives the Higgsfield plugins inside Blender and AE. Blockouts, generated meshes, rigged characters, and Seedance clips in Blender. Generated plates, background removal, reframing, and upscaling in AE. Runs on your Higgsfield credits.
 
-The skills work without the MCPs. If you only want writing-level help (planning, reviewing timing, critiquing a script), skip the MCP setup.
+Good news: the skills work just fine without the MCPs. If all you want is a sharp second brain for planning, reviewing timing, or critiquing a script, skip the MCP setup entirely and jump to Step 4.
 
 ---
 
 ## Install: 15-minute path
 
-Using GPT-6 Astra instead of Claude? Do Step 1, then jump to [Running with GPT-6 Astra](#running-with-gpt-6-astra-codex-cli).
+**Before you start, you need:**
+- [Claude Code](https://docs.claude.com/en/docs/claude-code) installed (the `claude` command works in your terminal).
+- Git.
+- Node.js 18+ and npm (only for the After Effects MCP in Step 2). Check with `node -v`.
+- After Effects and/or Blender, if you want live tool control.
+
+Steps 1 and 4 are the must-dos. Steps 2 and 3 are pick-your-own-adventure: do Step 2 if you live in After Effects, Step 3 if Blender's your home, both if you bounce between them. Skip both and the skills still give you solid writing-level help.
 
 ### Step 1: Clone this repo
+
+Get the skills onto your machine. Stay in this folder for the commands that follow.
 
 ```bash
 git clone https://github.com/LobzyJay/motion-design-with-claude.git
 cd motion-design-with-claude
 ```
 
-### Step 2: Install After Effects MCP
+### Step 2 (optional, After Effects users): Install the After Effects MCP
+
+This lets Claude send live commands into a running AE. Run these from inside the `motion-design-with-claude` folder from Step 1.
 
 ```bash
 git clone https://github.com/TheLlamainator/after-effects-mcp.git
@@ -53,7 +64,9 @@ claude mcp add AfterEffectsMCP node "$(pwd)/after-effects-mcp/build/index.js"
 
 Verify: `claude mcp list` should show `AfterEffectsMCP`.
 
-### Step 3: Install Blender MCP
+### Step 3 (optional, Blender users): Install the Blender MCP
+
+This lets Claude send Python commands into a running Blender session.
 
 1. Download the Blender Lab MCP add-on from `projects.blender.org/lab/blender_mcp`.
 2. In Blender: Edit > Preferences > Add-ons > Install > select the downloaded file > Enable.
@@ -66,76 +79,36 @@ claude mcp add BlenderMCP sse http://localhost:9876/sse
 
 Verify: `claude mcp list` should show `BlenderMCP`.
 
-### Step 4: Install Higgsfield for Blender (optional)
+### Step 4: Install the skills
 
-Needs Blender 5.1 or newer and a Higgsfield account. Generation runs in the cloud, so no big GPU needed.
+This is the step that actually installs the skills. Claude Code discovers them from `~/.claude/skills/` (personal, available in every project) and `.claude/skills/` (project-local). Pick one and copy the skills into it.
 
-1. Download the add-on .zip from `higgsfield.ai/plugins/blender`. Keep it zipped.
-2. Drag the .zip onto an open Blender window. It installs and enables itself. (Or: Edit > Preferences > Add-ons > Install.)
-3. Sign in on the floating Higgsfield bar over the viewport.
-
-Register the bridge with Claude Code:
-```bash
-claude mcp add --transport http HiggsfieldBridge https://bridge.higgsfield.ai/mcp
-```
-
-Then run `/mcp` inside Claude Code, pick `HiggsfieldBridge`, and sign in.
-
-Verify: `claude mcp list` should show `HiggsfieldBridge`.
-
-Keep the Blender MCP from Step 3 running too. The Blender MCP reads and edits the scene; the bridge generates new things into it. The skill knows which to use when.
-
-### Step 5: Install Higgsfield for After Effects (optional)
-
-Needs After Effects 2024 (24.0) or newer. One installer covers AE and Premiere Pro.
-
-**macOS:**
-1. Download the .dmg from `higgsfield.ai/plugins/after-effects`.
-2. Open it, drag Higgsfield to Applications, double-click to launch it once.
-3. In AE: Window > Extensions > Higgsfield AI. Sign in.
-
-**Windows:**
-1. Install the free ZXP Installer from aescripts.
-2. Drag the Higgsfield .zxp onto it.
-3. In AE: Window > Extensions > Higgsfield AI. Sign in.
-
-The bridge is the same one from Step 4. If you already registered it, you're done. If not, run the `claude mcp add` command from Step 4.
-
-Verify: `claude mcp list` should show `HiggsfieldBridge`.
-
-Want Higgsfield image and video generation outside Blender and AE too? Add the generation MCP:
-```bash
-claude mcp add --transport http Higgsfield https://mcp.higgsfield.ai/mcp
-```
-
-### Step 6: Install the skills
-
-Copy or symlink the skills directory into your Claude Code skills path:
-
+Personal install (available everywhere):
 ```bash
 # macOS/Linux
 mkdir -p ~/.claude/skills
 cp -r skills/* ~/.claude/skills/
 ```
 
-Already installed an older version? Run the same `cp` again to pick up the Higgsfield updates.
-
-Or add to your project's `.claude/settings.json`:
-```json
-{
-  "skillsPath": "/path/to/motion-design-with-claude/skills"
-}
+Or project-local, so the skills travel with one repo:
+```bash
+mkdir -p /path/to/your-project/.claude/skills
+cp -r skills/* /path/to/your-project/.claude/skills/
 ```
 
-### Step 7: Sanity checks
+There is no `skillsPath` setting; the two directories above are the only places Claude Code looks.
 
-**AE sanity check:**
+### Step 5: Sanity checks
+
+Run the foundation check below (works for everyone). Run the AE check only if you did Step 2, and the Blender check only if you did Step 3.
+
+**AE sanity check (if you did Step 2):**
 1. Open AE with a project.
 2. Window > `mcp-bridge-auto.jsx` > tick "Auto-run commands".
 3. In Claude Code: `"Use the aftereffects-motion skill. List the compositions in my current AE project."`
 4. Expected: Claude returns a list of comp names.
 
-**Blender sanity check:**
+**Blender sanity check (if you did Step 3):**
 1. Open Blender with the MCP server running.
 2. In Claude Code: `"Use the blender-motion skill. Connect to Blender MCP and tell me what objects are in my current scene."`
 3. Expected: Claude returns the object list.
@@ -226,13 +199,17 @@ Senior motion designers who want an agent as a working collaborator, not a tutor
 
 ## What's out of scope
 
-- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not in v1.
-- Web-motion (GSAP, Framer Motion, R3F). Use [claudedesignskills](https://github.com/freshtechbro/claudedesignskills) for those.
-- Cowork plugin packaging.
+Setting expectations so nobody's surprised:
+
+- Cinema 4D, Houdini, Nuke, DaVinci Resolve. Not covered, sorry.
+- Web-motion (GSAP, Framer Motion, R3F). Wrong toolbox. Go grab [claudedesignskills](https://github.com/freshtechbro/claudedesignskills) instead.
+- Cowork plugin packaging. This is Claude Code, pure and simple.
 
 ---
 
 ## Troubleshooting
+
+Something acting up? Don't panic, it's almost always one of these.
 
 **AE MCP not responding:**
 - Close and reopen `Window > mcp-bridge-auto.jsx` in AE.
@@ -269,4 +246,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new tool skills (e.g. a future `cinema4d-motion`).
+Want to add your own tool skill (a `cinema4d-motion`, maybe)? Awesome, we'd love that. [CONTRIBUTING.md](CONTRIBUTING.md) walks you through it.

@@ -48,7 +48,7 @@ scene.render.engine = 'CYCLES'
 scene.cycles.samples = 512                  # 256 for most brand work, 512 for high detail
 scene.cycles.preview_samples = 64
 
-# denoising (OIDN — Intel Open Image Denoise, GPU-agnostic)
+# denoising (OIDN, Intel Open Image Denoise, GPU-agnostic)
 scene.cycles.use_denoising = True
 scene.cycles.denoiser = 'OPENIMAGEDENOISE'  # or 'OPTIX' for Nvidia
 

@@ -6,13 +6,13 @@ What the AE MCP can and cannot do. Read before scoping any build.
 
 ## Hard limits: MCP cannot do these
 
-**Trim Paths and shape-layer interiors.** The MCP has no access to shape layer contents. Trim Paths, stroke/fill toggles on shapes, any property inside a shape group — all JSX-only. If the user asks for a Trim Paths animation, write JSX. Do not attempt via MCP.
+**Trim Paths and shape-layer interiors.** The MCP has no access to shape layer contents. Trim Paths, stroke/fill toggles on shapes, any property inside a shape group, all JSX-only. If the user asks for a Trim Paths animation, write JSX. Do not attempt via MCP.
 
 **3D Layer switch.** Enabling the 3D Layer flag on a layer (`layer.threeDLayer`) is not accessible via MCP. Either tell the user to do it manually or handle it via JSX.
 
 **Render and export.** Claude cannot trigger renders or exports. The user runs the Render Queue themselves. Your job ends at "set this up to render." Don't imply otherwise.
 
-**Viewport vision.** Claude has no live view of the AE comp. The only way to see the current state is a user screenshot. Ask for one at a specific time when you need it — "screenshot at 2.5s with the comp panel visible at 100% zoom."
+**Viewport vision.** Claude has no live view of the AE comp. The only way to see the current state is a user screenshot. Ask for one at a specific time when you need it, "screenshot at 2.5s with the comp panel visible at 100% zoom."
 
 ---
 
